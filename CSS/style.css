@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400|Pacifico");
+/* RESET CSS */
+body,
+h1,
+p {
+  margin: 0;
+  font-family: Montserrat;
+  font-weight: 400;
+}
+/* SELECTION */
+*::selection {
+  background-color: rgba(22,22,22,0.2);
+}
+*::-moz-selection {
+  background-color: rgba(22,22,22,0.2);
+}
+/* LOGO */
+.fabricaLogoText {
+  font-family: Pacifico;
+  font-size: 40px;
+  margin: 0 0 20% 0;
+  color: #000;
+  z-index: 4;
+  text-align: center;
+}
+.fabricaLogoImg {
+  width: 60%;
+  margin: 30% auto 10% auto;
+  display: block;
+}
+/* BARS COLOR */
+#bars div {
+  background-color: #ebebeb;
+}
+/* SIDEBAR */
+#sidebar {
+  width: 193px;
+  height: 100vh;
+  z-index: 999 !important;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  justify-content: space-between;
+}
+#sidebar #topInfo {
+  align-self: flex-start;
+  width: 100%;
+}
+#sidebar #bottomInfo {
+  align-self: flex-end;
+  width: 100%;
+}
+/* TOPBAR */
+#topbar {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  z-index: 2;
+}
+#topbar .spacer {
+  width: 193px;
+  height: 172px;
+}
+.service#tablecalc,
+.service#tablecalc .servicecontainer {
+  background-color: #f1c40f;
+}
+.service#about,
+.service#about .servicecontainer {
+  background-color: #4a86e8;
+}
+.service#git,
+.service#git .servicecontainer {
+  background-color: #ff6969;
+}
+.service#settings,
+.service#settings .servicecontainer {
+  background-color: #d1d1d1;
+}
+.service {
+  width: 112%;
+  margin-left: -12px;
+  height: 110px;
+  transform: rotate(8deg);
+  transition: transform 200ms;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.service .servicecontainer {
+  transform: rotate(-8deg);
+  text-align: center;
+}
+.service .servicecontainer h1 {
+  font-size: 30px;
+}
+.service:hover {
+  transform: scale(1.05) rotate(8deg) !important;
+}
+.service.primary .servicecontainer h1 {
+  font-size: 46px;
+}
+.service.primary .servicecontainer p {
+  font-size: 18;
+  font-weight: 300;
+}
