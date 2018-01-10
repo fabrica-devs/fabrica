@@ -1,11 +1,80 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400|Pacifico");
+/* OVERLAY - FIRST AND LAST THING TO LOAD */
+#overlay {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ebebeb;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+#overlay h1 {
+  margin: 10% auto 0 auto;
+}
+#overlay p {
+  margin-top: 2%;
+  width: 100%;
+  text-align: center;
+}
+#overlay .spinner {
+  align-self: center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  margin: 20% 0;
+  display: inline-block;
+}
+#overlay .spinner:before,
+#overlay .spinner:after {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  background: #ff4500;
+  animation: pulse 3s linear infinite;
+  opacity: 0;
+}
+#overlay .spinner:after {
+  animation: pulse 2s linear 2.3s infinite;
+}
+#overlay .fabricaLogoImg {
+  cursor: pointer;
+  margin: 40% auto;
+  width: 800px;
+  transform: rotate(25deg);
+  transition: margin 1s;
+}
+#overlay .fabricaLogoImg:hover {
+  margin: 20% auto;
+}
 /* RESET CSS */
+body {
+  overflow: hidden;
+  background-color: #000;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
 body,
 h1,
 p {
   margin: 0;
   font-family: Montserrat;
   font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: #ff4500;
 }
 /* SELECTION */
 *::selection {
@@ -18,14 +87,14 @@ p {
 .fabricaLogoText {
   font-family: Pacifico;
   font-size: 40px;
-  margin: 0 0 20% 0;
+  margin: 9% 0 20% 0;
   color: #000;
   z-index: 4;
   text-align: center;
 }
 .fabricaLogoImg {
   width: 60%;
-  margin: 30% auto 10% auto;
+  margin: 20% auto 20% auto;
   display: block;
 }
 /* BARS COLOR */
@@ -52,36 +121,7 @@ p {
   align-self: flex-end;
   width: 100%;
 }
-/* TOPBAR */
-#topbar {
-  width: 100%;
-  height: 72px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  z-index: 2;
-}
-#topbar .spacer {
-  width: 193px;
-  height: 172px;
-}
-.service#tablecalc,
-.service#tablecalc .servicecontainer {
-  background-color: #f1c40f;
-}
-.service#about,
-.service#about .servicecontainer {
-  background-color: #4a86e8;
-}
-.service#git,
-.service#git .servicecontainer {
-  background-color: #ff6969;
-}
-.service#settings,
-.service#settings .servicecontainer {
-  background-color: #d1d1d1;
-}
-.service {
+#sidebar .service {
   width: 112%;
   margin-left: -12px;
   height: 110px;
@@ -93,20 +133,398 @@ p {
   align-items: center;
   overflow: hidden;
 }
-.service .servicecontainer {
+#sidebar .service .servicecontainer {
   transform: rotate(-8deg);
   text-align: center;
 }
-.service .servicecontainer h1 {
+#sidebar .service .servicecontainer h1 {
   font-size: 30px;
 }
-.service:hover {
+#sidebar .service:hover {
   transform: scale(1.05) rotate(8deg) !important;
 }
-.service.primary .servicecontainer h1 {
+#sidebar .service.primary .servicecontainer h1 {
   font-size: 46px;
 }
-.service.primary .servicecontainer p {
+#sidebar .service.primary .servicecontainer p {
   font-size: 18;
   font-weight: 300;
+}
+/* TOPBAR */
+#topbar {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 2;
+}
+#topbar .buttoncontainer {
+  font-size: 20px;
+  border: 5px solid #d9d9d9;
+  background-color: #d9d9d9;
+  transition: background-color 200ms;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+#topbar .buttoncontainer.back {
+  display: none;
+}
+#topbar .button {
+  cursor: pointer;
+  width: 113px;
+  margin-right: 10px;
+}
+#topbar .button:hover {
+  background-color: transparent;
+}
+#topbar #leftButtonMenu {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 193px;
+}
+#topbar #leftButtonMenu .fontcontainer {
+  width: 340px;
+}
+#topbar #leftButtonMenu .fontcontainer span {
+  background-color: #d9d9d9;
+}
+#topbar #leftButtonMenu .fontcontainer span select,
+#topbar #leftButtonMenu .fontcontainer span option {
+  max-width: 154px;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  font-family: Montserrat;
+  font-size: 20px;
+  padding: 0 10px 0 0;
+  background: url("../MISC/dropdown.svg") no-repeat;
+  background-position: 95%;
+  height: 30px;
+  background-color: #ebebeb;
+  margin-right: 10px;
+}
+#topbar #leftButtonMenu .fontcontainer .fontsizecontainer select {
+  padding: 0 40px 0 0;
+}
+#topbar #leftButtonMenu .formattingcontainer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+#topbar #leftButtonMenu .formattingcontainer .formattingbutton {
+  width: 54px;
+  cursor: pointer;
+  background: transparent;
+  text-align: center;
+}
+#topbar #leftButtonMenu .formattingcontainer .formattingbutton:hover {
+  background-color: #dedede;
+}
+#topbar #leftButtonMenu .formattingcontainer .formattingbutton.selected {
+  background-color: #d9d9d9;
+}
+#topbar #leftButtonMenu .formattingcontainer .formattingbutton.selected.bold {
+  font-weight: bold;
+}
+#topbar #leftButtonMenu .formattingcontainer .formattingbutton.selected.italics {
+  font-style: italic;
+}
+#topbar #leftButtonMenu .formattingcontainer .formattingbutton.selected.underscore {
+  text-decoration: underline;
+}
+#topbar #rightButtonMenu {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 10px;
+}
+#topbar #rightButtonMenu .buttoncontainer {
+  margin-left: 10px;
+  cursor: pointer;
+}
+#topbar #rightButtonMenu .buttoncontainer.button {
+  margin-right: 0;
+}
+#topbar #rightButtonMenu .buttoncontainer.helpbutton {
+  width: 54px;
+}
+#topbar #rightButtonMenu .buttoncontainer.tablecalc {
+  border-color: #f1c40f;
+}
+#topbar #rightButtonMenu .buttoncontainer.tablecalc h1 {
+  font-size: 20px;
+}
+#topbar #rightButtonMenu .buttoncontainer.tablecalc p {
+  font-size: 10px;
+  font-weight: 300;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .fontcontainer span select {
+    padding: 0 0 0 10px !important;
+    background-position: 90% !important;
+  }
+  #fontsizeselector {
+    padding: 0 20px 0 10px !important;
+  }
+}
+/* COLOR SCHEME */
+.tablecalc,
+.tablecalc .servicecontainer,
+#rightButtonMenu .buttoncontainer.tablecalc .twolinebutton {
+  background-color: #f1c40f !important;
+}
+.about,
+.about .servicecontainer {
+  background-color: #4a86e8 !important;
+}
+.git,
+.git .servicecontainer {
+  background-color: #ff6969 !important;
+}
+.settings,
+.settings .servicecontainer {
+  background-color: #d1d1d1 !important;
+}
+#mainArea #innerOverlay {
+  z-index: 999;
+  display: none;
+  background-color: #fff;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+/* ABOUT PAGE */
+#about {
+  margin-top: 10%;
+}
+#about .headerText {
+  font-family: Pacifico;
+  text-align: center;
+}
+#about .logos {
+  margin: 5% auto;
+  width: 208px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+#about .logos h2 {
+  margin-bottom: 5%;
+}
+#about .logos p {
+  margin: 10% auto;
+}
+#about .logos div {
+  margin-left: 40%;
+  padding: 0 10%;
+  border-radius: 10px;
+  transition: background-color 200ms;
+}
+#about .logos div:hover {
+  background-color: rgba(22,22,22,0.2);
+}
+#about .logos div:hover img {
+  transform: scale(1.05);
+}
+#about .logos div img {
+  margin-top: 10%;
+  margin-bottom: 2%;
+  height: 200px;
+  border-radius: 75%;
+  border: 4px #212121 solid;
+  transition: 400ms transform;
+}
+.dropdown {
+  position: absolute;
+  top: 61px;
+  border: 5px solid #dfdfdf;
+  border-bottom: none;
+  width: 113px;
+  opacity: 0;
+  display: none;
+}
+.dropdown.edit {
+  left: 326px;
+}
+.dropdown.insert {
+  left: 459px;
+}
+.dropdown.more {
+  left: 592px;
+}
+.dropdown ul li {
+  cursor: pointer;
+  background-color: #dfdfdf;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-bottom: 5px solid #dfdfdf;
+  transition: background-color 200ms;
+}
+.dropdown ul li:hover {
+  background-color: #ebebeb;
+}
+.dropdown ul li span {
+  width: 100%;
+  text-align: center;
+}
+.button.file:hover + .dropdown.file,
+.dropdown.file:hover,
+.button.edit:hover + .dropdown.edit,
+.dropdown.edit:hover,
+.button.insert:hover + .dropdown.insert,
+.dropdown.insert:hover,
+.button.more:hover + .dropdown.more,
+.dropdown.more:hover {
+  display: block;
+  opacity: 1;
+  animation-name: fadeInDropdown;
+  animation-duration: 400ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400|Pacifico");
+@-moz-keyframes pulse {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pulse {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+@-o-keyframes pulse {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeInDropdown {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInDropdown {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeInDropdown {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInDropdown {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeOutDropdown {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+@-webkit-keyframes fadeOutDropdown {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+@-o-keyframes fadeOutDropdown {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+@keyframes fadeOutDropdown {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
 }
