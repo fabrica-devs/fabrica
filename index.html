@@ -3,9 +3,10 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Fabrica</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Pacifico" rel="stylesheet">
         <link rel="stylesheet" href="CSS/reset.css">
         <link rel="stylesheet" href="CSS/normalize.css">
         <link rel="stylesheet" href="CSS/style.css">
@@ -112,6 +113,7 @@
                                     <option value="18">18</option>
                                     <option value="20">20</option>
                                 </select>
+                                px
                             </span>
                         </div>
                         <div class="formattingcontainer">
@@ -121,16 +123,17 @@
                         </div>
                     </div>
                     <div id="rightButtonMenu">
-                        <div class="buttoncontainer button helpbutton" title="Help">?</div>
-                        <div class="buttoncontainer button tablecalc" style="cursor: default;">
-                            <div class="twolinebutton">
-                                <h1>Table</h1>
-                                <p>Calculation</p>
+                        <div class="buttoncontainer button helpbutton" title="Help" onclick="slide(this, 'help', 'tablecalc')">?</div>
+                        <div class="buttoncontainer button positionindicator tablecalc" style="cursor: default;">
+                            <div class="twolinebutton transparent">
+                                <h1>table</h1>
+                                <p>calculation</p>
                             </div>
                         </div>
                         <div class="buttoncontainer button">Feedback</div>
                     </div>
                 </div>
+                <div id="sidebarshadowfix"></div>
                 <div id="sidebar">
                     <div id="topInfo">
                         <h1 class="fabricaLogoText">Fabrica</h1>
@@ -145,7 +148,7 @@
                     </div>
                     <div id="bottomInfo">
                         <div class="services">
-                            <div class="service about" style="transform: rotate(8deg);" onclick="slideAbout(this);">
+                            <div class="service about" style="transform: rotate(8deg);" onclick="slide(this, 'about', 'tablecalc');">
                                 <div class="servicecontainer">
                                     <h1>About us</h1>
                                 </div>
@@ -161,7 +164,9 @@
                 </div>
             </div>
             <div id="mainArea">
-                <div id="innerOverlay"></div>
+                <div id="innerOverlay">
+                    <div id="innerOverlayContainer"></div>
+                </div>
             </div>
         </div>
     </body>

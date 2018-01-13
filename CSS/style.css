@@ -59,7 +59,7 @@
 /* RESET CSS */
 body {
   overflow: hidden;
-  background-color: #000;
+  background-color: #efefef;
   user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -69,7 +69,7 @@ body,
 h1,
 p {
   margin: 0;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif !important;
   font-weight: 400;
 }
 a {
@@ -85,7 +85,7 @@ a {
 }
 /* LOGO */
 .fabricaLogoText {
-  font-family: Pacifico;
+  font-family: 'Pacifico', cursive !important;
   font-size: 40px;
   margin: 9% 0 20% 0;
   color: #000;
@@ -102,6 +102,17 @@ a {
   background-color: #ebebeb;
 }
 /* SIDEBAR */
+#sidebarshadowfix {
+  width: 193px;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-box-shadow: -1px 5px 24px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: -1px 5px 24px 0px rgba(0,0,0,0.2);
+  box-shadow: -1px 5px 24px 0px rgba(0,0,0,0.2);
+  z-index: -1;
+}
 #sidebar {
   width: 193px;
   height: 100vh;
@@ -152,24 +163,31 @@ a {
 }
 /* TOPBAR */
 #topbar {
-  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: calc(100% -193px);
   height: 72px;
+  margin-left: 193px;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
   z-index: 2;
+  -webkit-box-shadow: -1px 5px 24px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: -1px 5px 24px 0px rgba(0,0,0,0.1);
+  box-shadow: -1px 5px 24px 0px rgba(0,0,0,0.1);
 }
 #topbar .buttoncontainer {
   font-size: 20px;
   border: 5px solid #d9d9d9;
   background-color: #d9d9d9;
-  transition: background-color 200ms;
+  transition: background-color 400ms;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   user-select: none;
+  text-transform: capitalize;
 }
 #topbar .buttoncontainer.back {
   display: none;
@@ -186,10 +204,9 @@ a {
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-left: 193px;
 }
 #topbar #leftButtonMenu .fontcontainer {
-  width: 340px;
+  width: 400px;
 }
 #topbar #leftButtonMenu .fontcontainer span {
   background-color: #d9d9d9;
@@ -203,14 +220,16 @@ a {
   appearance: none;
   border: none;
   outline: none;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif !important;
   font-size: 20px;
   padding: 0 10px 0 0;
   background: url("../MISC/dropdown.svg") no-repeat;
   background-position: 95%;
   height: 30px;
   background-color: #ebebeb;
-  margin-right: 10px;
+}
+#topbar #leftButtonMenu .fontcontainer span #fontfamilyselector {
+  margin-right: 20px;
 }
 #topbar #leftButtonMenu .fontcontainer .fontsizecontainer select {
   padding: 0 40px 0 0;
@@ -233,7 +252,7 @@ a {
   background-color: #d9d9d9;
 }
 #topbar #leftButtonMenu .formattingcontainer .formattingbutton.selected.bold {
-  font-weight: bold;
+  font-weight: 700;
 }
 #topbar #leftButtonMenu .formattingcontainer .formattingbutton.selected.italics {
   font-style: italic;
@@ -250,15 +269,13 @@ a {
 #topbar #rightButtonMenu .buttoncontainer {
   margin-left: 10px;
   cursor: pointer;
+  transition: all 400ms;
 }
 #topbar #rightButtonMenu .buttoncontainer.button {
   margin-right: 0;
 }
 #topbar #rightButtonMenu .buttoncontainer.helpbutton {
   width: 54px;
-}
-#topbar #rightButtonMenu .buttoncontainer.tablecalc {
-  border-color: #f1c40f;
 }
 #topbar #rightButtonMenu .buttoncontainer.tablecalc h1 {
   font-size: 20px;
@@ -278,37 +295,46 @@ a {
 }
 /* COLOR SCHEME */
 .tablecalc,
-.tablecalc .servicecontainer,
-#rightButtonMenu .buttoncontainer.tablecalc .twolinebutton {
+.tablecalc .servicecontainer {
   background-color: #f1c40f !important;
+  border-color: #f1c40f !important;
 }
 .about,
 .about .servicecontainer {
   background-color: #4a86e8 !important;
+  border-color: #4a86e8 !important;
 }
 .git,
 .git .servicecontainer {
   background-color: #ff6969 !important;
+  border-color: #ff6969 !important;
 }
-.settings,
-.settings .servicecontainer {
-  background-color: #d1d1d1 !important;
+.help {
+  background-color: #8bc34a !important;
+  border-color: #8bc34a !important;
+}
+.transparent {
+  background-color: rgba(0,0,0,0) !important;
+  border-color: rgba(0,0,0,0) !important;
 }
 #mainArea #innerOverlay {
   z-index: 999;
   display: none;
   background-color: #fff;
   width: 100vw;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
 }
-/* ABOUT PAGE */
-#about {
-  margin-top: 10%;
+#mainArea #innerOverlay #innerOverlayContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
+/* ABOUT PAGE */
 #about .headerText {
-  font-family: Pacifico;
+  font-family: 'Pacifico', cursive;
   text-align: center;
 }
 #about .logos {
@@ -324,6 +350,7 @@ a {
 }
 #about .logos p {
   margin: 10% auto;
+  word-break: break-all;
 }
 #about .logos div {
   margin-left: 40%;
@@ -395,7 +422,6 @@ a {
   animation-iteration-count: 1;
   animation-timing-function: ease;
 }
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400|Pacifico");
 @-moz-keyframes pulse {
   from {
     transform: scale(0);
