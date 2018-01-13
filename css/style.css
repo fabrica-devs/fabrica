@@ -223,7 +223,7 @@ a {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 20px;
   padding: 0 10px 0 0;
-  background: url("../MISC/dropdown.svg") no-repeat;
+  background: url("../media/dropdown.svg") no-repeat;
   background-position: 95%;
   height: 30px;
   background-color: #ebebeb;
@@ -326,7 +326,7 @@ a {
   bottom: 0;
   left: 0;
 }
-#mainArea #innerOverlay #innerOverlayContainer {
+#innerOverlayContainer {
   display: flex;
   justify-content: center;
   align-items: center;
