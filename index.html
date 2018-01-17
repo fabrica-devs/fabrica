@@ -11,6 +11,12 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/supportedBrowser.js"></script>
+        
+        <!-- table -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.35.0/handsontable.full.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.35.0/handsontable.full.min.css">
+        <script src="js/table.js"></script>
     </head>
 
     <body>
@@ -25,24 +31,24 @@
                 <div id="topbar">
                     <div id="leftButtonMenu">
                         <!-- <div class="spacer"></div> -->
-                        <div class="button buttoncontainer file">File</div>
+                        <div class="button buttoncontainer collapsed file">File</div>
                         <div class="dropdown file">
                             <ul>
                                 <li>
-                                    <span>Option 1</span>
+                                    <span>New</span>
                                 </li>
                                 <li>
-                                    <span>Option 2</span>
+                                    <span>Open</span>
                                 </li>
                                 <li>
-                                    <span>Option 3</span>
+                                    <span>Save</span>
                                 </li>
                                 <li>
-                                    <span>Option 4</span>
+                                    <span>Export</span>
                                 </li>
                             </ul>
                         </div>
-                        <div class="button buttoncontainer edit">Edit</div>
+                        <div class="button buttoncontainer collapsed edit">Edit</div>
                         <div class="dropdown edit">
                             <ul>
                                 <li>
@@ -59,7 +65,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="button buttoncontainer insert">Insert</div>
+                        <div class="button buttoncontainer collapsed insert">Insert</div>
                         <div class="dropdown insert">
                             <ul>
                                 <li>
@@ -76,7 +82,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="button buttoncontainer more">More</div>
+                        <div class="button buttoncontainer collapsed more">More</div>
                         <div class="dropdown more">
                             <ul>
                                 <li>
@@ -123,7 +129,9 @@
                         </div>
                     </div>
                     <div id="rightButtonMenu">
-                        <div class="buttoncontainer button helpbutton" title="Help" onclick="slide(this, 'help', 'tablecalc')">?</div>
+                        <div class="helpbuttoncontainer">
+                            <div class="buttoncontainer button helpbutton" title="Help" onclick="slide(this, 'help', 'tablecalc')">?</div>
+                        </div>
                         <div class="buttoncontainer button positionindicator tablecalc" style="cursor: default;">
                             <div class="twolinebutton transparent">
                                 <h1>table</h1>
@@ -137,6 +145,7 @@
                 <div id="sidebar">
                     <div id="topInfo">
                         <h1 class="fabricaLogoText">Fabrica</h1>
+                        <p class="showHideButton" onclick="hideSidebar('empty')">Hide</p>
                         <div class="services">
                             <div class="service primary tablecalc" style="transform: rotate(8deg);">
                                 <div class="servicecontainer">
@@ -164,6 +173,7 @@
                 </div>
             </div>
             <div id="mainArea">
+                <div id="table"></div>
                 <div id="innerOverlay">
                     <div id="innerOverlayContainer"></div>
                 </div>

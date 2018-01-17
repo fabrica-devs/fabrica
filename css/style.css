@@ -4,7 +4,7 @@
   width: 100vw;
   height: 100vh;
   background-color: #ebebeb;
-  position: absolute;
+  position: relative;
   top: 0;
   z-index: 1000;
   display: flex;
@@ -97,6 +97,11 @@ a {
   margin: 20% auto 20% auto;
   display: block;
 }
+.showHideButton {
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
+}
 /* BARS COLOR */
 #bars div {
   background-color: #ebebeb;
@@ -131,6 +136,9 @@ a {
 #sidebar #bottomInfo {
   align-self: flex-end;
   width: 100%;
+}
+#sidebar .services:not(:first-child) {
+  margin: 9% auto;
 }
 #sidebar .service {
   width: 112%;
@@ -177,6 +185,10 @@ a {
   -moz-box-shadow: -1px 5px 24px 0px rgba(0,0,0,0.1);
   box-shadow: -1px 5px 24px 0px rgba(0,0,0,0.1);
 }
+#topbar .showHideButton {
+  display: block;
+  margin: 2% auto;
+}
 #topbar .buttoncontainer {
   font-size: 20px;
   border: 5px solid #d9d9d9;
@@ -204,6 +216,10 @@ a {
   display: flex;
   align-items: center;
   flex-direction: row;
+}
+#topbar #leftButtonMenu .showHideButton {
+  transform: rotate(-90deg);
+  height: 0;
 }
 #topbar #leftButtonMenu .fontcontainer {
   width: 400px;
@@ -276,6 +292,7 @@ a {
 }
 #topbar #rightButtonMenu .buttoncontainer.helpbutton {
   width: 54px;
+  transition: opacity 400ms;
 }
 #topbar #rightButtonMenu .buttoncontainer.tablecalc h1 {
   font-size: 20px;
@@ -336,6 +353,7 @@ a {
 #about .headerText {
   font-family: 'Pacifico', cursive;
   text-align: center;
+  font-size: 40px;
 }
 #about .logos {
   margin: 5% auto;
@@ -378,17 +396,13 @@ a {
   border: 5px solid #dfdfdf;
   border-bottom: none;
   width: 113px;
-  opacity: 0;
   display: none;
+  opacity: 0;
+  z-index: 999;
 }
-.dropdown.edit {
-  left: 326px;
-}
-.dropdown.insert {
-  left: 459px;
-}
-.dropdown.more {
-  left: 592px;
+.dropdown.toggled {
+  opacity: 1;
+  display: block;
 }
 .dropdown ul li {
   cursor: pointer;
@@ -421,6 +435,12 @@ a {
   animation-duration: 400ms;
   animation-iteration-count: 1;
   animation-timing-function: ease;
+}
+#nonSupportedBrowser {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 @-moz-keyframes pulse {
   from {
