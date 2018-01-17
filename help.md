@@ -7,9 +7,9 @@
 + About us
     + See who developed this fancy pancy webpage
 + Git Project
-    + Redirects to our [github project](https://github.com/fabrica-devs/fabrica "Fabrica")
+    + Redirects to our [github project]
 #### Topbar navigation
-+ Table Calculation
++ Table Calculation <span onclick="console.log(this)">+</span>
     + File
         + drops down options for 'File'
     + Edit
@@ -27,7 +27,7 @@
     + I
         + *Italic*
     + U
-        + Underline
+        + <u>Underline</u>
     + ?
         + Help
 + About us
@@ -53,7 +53,7 @@
     + I
         + *Italic*
     + U
-        + Underline
+        + <u>Underline</u>
     
 ## Export/Import
 #### New Document
@@ -64,3 +64,4 @@
 + File ➡ Save ➡ [Choose destination and name] ➡ save
 
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
+[github project]: https://github.com/fabrica-devs/fabrica "Fabrica"
