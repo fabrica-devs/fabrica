@@ -19,7 +19,7 @@ function urlEdit(newPage) {
             urlChange(newPage);
             break;
         default:
-            window.location.href = window.location.href.split("?p=")[0];
+            window.history.pushState({path:window.location.href.split("?p=")[0]},'',window.location.href.split("?p=")[0]);
             if (typeof (Storage) !== undefined) {
                 localStorage.setItem("lastSite", window.location.href);
             }
@@ -28,7 +28,7 @@ function urlEdit(newPage) {
 }
 
 function urlChange(newPage) {
-    var curUrl = window.location.href;
+    var curUrl = String(window.location.href);
     if (curUrl.split("?p=").length > 1) {
         curUrl = curUrl.split("?p=")[0] + "?p=" + newPage;
     } else {
@@ -37,6 +37,7 @@ function urlChange(newPage) {
     if (typeof (Storage) !== undefined) {
         localStorage.setItem("lastSite", curUrl);
     }
+    window.history.pushState({path:curUrl},'',curUrl);
 }
 
 /* Andi */
