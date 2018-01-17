@@ -1,5 +1,5 @@
 var topbarLeftButtonMenu;
-var texts = [['about', `<div id="about"><h1 class="headerText">Welcome! We are Fabrica</h1><div class="logocontainer"><div class="logos"><div><img src="media/turtleowoextend.png" alt="IMG"><h2>Andreas</h2><code>Project Management/Implementation of the Table Calculation</code></div><div><img src="media/Clemens.png" alt="IMG"><h2>Clemens</h2><code>Implementation of the Table Calculation</code><p>yeah can i get uuuuuuuuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p></div><div><img src="media/Thomas.png" alt="IMG"><h2>Thomas</h2><code>Creation of the Documentation/Helpsites</code></div><div><img src="media/Gabi.png" alt="IMG"><h2>Gabriel (Gabi) Deutner</h2><code>Design and Execution of the Layout</code><p>"Heya! Welcome to our website!<br/>As written above, I am responsible for the design and execution of the layout, if you find a mistake in the layout, send me an <a href="mailto:info@deutner.space">email!</a><br/><b>Loves turtles!</b></p></div></a></div></div></div>`]];
+var texts = [['about', `<div id="about"><h1 class="headerText">Welcome! We are Fabrica</h1><div class="logocontainer"><div class="logos"><div><img src="media/turtleowoextend.png" alt="IMG"><h2>Andreas</h2><code>Project Management/Implementation of the Table Calculation</code></div><div><img src="media/Clemens.png" alt="IMG"><h2>Clemens</h2><code>Implementation of the Table Calculation</code><p>yeah can i get uuuuuuuuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p></div><div><img src="media/Thomas.png" alt="IMG"><h2>Thomas</h2><code>Creation of the Documentation/Helpsites</code></div><div><img src="media/Gabi.png" alt="IMG"><h2>Gabriel (Gabi) Deutner</h2><code>Design and Execution of the Layout</code><p>"Heya! Welcome to our website!<br/>As written above, I am responsible for the design and execution of the layout, if you find a mistake in the layout, send me an <a href="mailto:info@deutner.space">email!</a><br/><b>Loves turtles!</b></p></div></a></div></div></div>`], ['help', `<div id="help>Test</div>"`]];
 
 /* On Page Load */
 $(document).ready(function () {
@@ -56,8 +56,10 @@ function leavingPage(url) {
 function writeOverlay(to) {
     if (to != 'Empty') {
         for (let i = 0; i < texts.length; i++) {
+            console.log(texts[i][0] + texts[i][1] + to);
             if (texts[i][0] == to) {
                 $('#innerOverlayContainer').html(texts[i][1]);
+                return;
             }
         }
     } else {
@@ -126,9 +128,11 @@ function slideDown(to, from) {
         hideSidebar();
         $('#innerOverlay').css('height', $(window).height() - 400);
         $('#innerOverlay').css('position', 'absolute');
+        $('#innerOverlay').css('background-color', 'rgba(255,255,255,0.8)');
     } else {
         $('#innerOverlay').css('height', $(window).height() - 72);
         $('#innerOverlay').css('position', 'absolute');
+        $('#innerOverlay').css('background-color', 'white');
     }
 
     writeOverlay(to);
