@@ -47,7 +47,7 @@
         transition margin 1s
         &:hover
             margin 20% auto
-
+    
 @keyframes pulse
   from
     transform scale(0)
@@ -67,14 +67,14 @@ body, h1, p
     margin 0
     font-family 'Montserrat', sans-serif!important
     font-weight 400
-a
+a 
     text-decoration none
     color orangered
 /* SELECTION */
 *::selection
     background-color rgba(22,22,22,0.2)
 *::-moz-selection
-    background-color rgba(22,22,22,0.2)
+    background-color rgba(22,22,22,0.2)        
 /* LOGO */
 .fabricaLogoText
     font-family 'Pacifico', cursive!important
@@ -90,7 +90,7 @@ a
 .showHideButton
     cursor pointer
     text-decoration underline
-    text-align center
+    text-align center    
 /* BARS COLOR */
 #bars div
     background-color #EBEBEB
@@ -110,13 +110,13 @@ a
     height 100vh
     z-index 999!important
     position absolute
-    top 0
+    top 0    
     display flex
     flex-direction column
     overflow-x hidden
     justify-content space-between
     #topInfo
-        align-self flex-start
+        align-self flex-start    
         width 100%
     #bottomInfo
         align-self flex-end
@@ -138,17 +138,17 @@ a
             transform rotate(-8deg)
             text-align center
             h1
-                font-size 30px
-        &:hover
+                font-size 30px    
+        &.hoverable:hover
             transform scale(1.05) rotate(8deg)!important
         &.primary
             .servicecontainer
                 h1
                     font-size 46px
-                p
+                p    
                     font-size 18
-                    font-weight 300
-/* TOPBAR */
+                    font-weight 300    
+/* TOPBAR */        
 #topbar
     overflow-x auto
     overflow-y hidden
@@ -184,7 +184,7 @@ a
         width 113px
         margin-right 10px
         &:hover
-            background-color transparent
+            background-color transparent    
     #leftButtonMenu
         display flex
         align-items center
@@ -234,7 +234,7 @@ a
                     &.italics
                         font-style italic
                     &.underscore
-                        text-decoration underline
+                        text-decoration underline                                                                    
     #rightButtonMenu
         display flex
         align-items center
@@ -254,17 +254,17 @@ a
                     font-size 20px
                 p
                     font-size 10px
-                    font-weight 300
-@media screen and (-webkit-min-device-pixel-ratio:0){
+                    font-weight 300                    
+@media screen and (-webkit-min-device-pixel-ratio:0){ 
     .fontcontainer span select{
         padding: 0 0 0 10px!important;
         background-position: 90%!important;
     }
     #fontsizeselector{
-        padding: 0 20px 0 10px!important;
+        padding: 0 20px 0 10px!important;   
     }
-}
-/* COLOR SCHEME */
+}     
+/* COLOR SCHEME */               
 .tablecalc, .tablecalc .servicecontainer
     background-color #F1C40F!important
     border-color #F1C40F!important
@@ -278,9 +278,10 @@ a
     background-color #8BC34A!important
     border-color #8BC34A!important
 .transparent
-    background-color rgba(0,0,0,0)!important
+    background-color rgba(0,0,0,0)!important    
     border-color rgba(0,0,0,0)!important
 #mainArea
+    margin-left 193px
     #innerOverlay
         z-index 999
         display none
@@ -293,8 +294,8 @@ a
     display flex
     justify-content center
     align-items center
-    height 100%
-// #help
+    height 100%    
+// #help        
 //     #innerOverlayContainer
 //         display flex
 //         justify-content center
@@ -334,12 +335,12 @@ a
                 border-radius 75%
                 border 4px #212121 solid
                 transition 400ms transform
-
+                    
 .dropdown
     position absolute
     top 61px
     border 5px solid #dfdfdf
-    border-bottom none
+    border-bottom none             
     width 113px
     display none
     opacity 0
@@ -368,14 +369,14 @@ a
     animation-name fadeInDropdown
     animation-duration 400ms
     animation-iteration-count 1
-    animation-timing-function ease
+    animation-timing-function ease   
 #nonSupportedBrowser
     text-align center
     position absolute
     top 50%
     transform translateY(-50%)
 @keyframes fadeInDropdown
-    0%
+    0% 
         display none
         opacity 0
     1%
@@ -389,4 +390,4 @@ a
     99%
         opacity 0
     100%
-        display none
+        display none       

@@ -12,6 +12,12 @@ $(document).ready(function () {
 
     $(window).on('resize', function () {
         $('#innerOverlay').css('height', $(window).height() - 72);
+        $('#sidebar').css('height', '100%');
+        topbarWidth = $(window).width() - 193;
+        $('#topbar').animate({
+            margin: `0 0 0 ${topbarMargin}`,
+            width: `${topbarWidth}px`
+        });
     });
 
     topbarLeftButtonMenu = $('#topbar #leftButtonMenu').html();
@@ -54,7 +60,6 @@ function writeOverlay(to) {
 
 function changeIndicatorButton(to, from) {
     lastButtonText = $('.positionindicator div').html();
-    //console.log("To: " + to + ", From: " + from + " at changeIndicatorButton()");
     $('.positionindicator div').fadeOut(200, function () {
         $('.positionindicator').addClass(to).removeClass(from);
         if (to == 'tablecalc') {
@@ -69,7 +74,6 @@ function fixCollapsedButtons() {
     $('.collapsed').on('mouseenter', function () {
         let buttonClass = $(this).attr('class').replace('buttoncontainer ', '').replace('button ', '').replace('collapsed ', '');
         $(`.dropdown.${buttonClass}`).css('left', $(this).offset().left);
-        console.log($(this).offset().left);
     });
     $('.collapsed').on('click', function () {
         let buttonClass = $(this).attr('class').replace('buttoncontainer ', '').replace('button ', '').replace('collapsed ', '');
@@ -128,6 +132,7 @@ function slideDown(to, from) {
         $('#topbar #leftButtonMenu .buttoncontainer, .helpbuttoncontainer').fadeOut(400, function () {
             $('#topbar #leftButtonMenu .buttoncontainer').remove();
             if (to == 'help') {
+                $('#leftButtonMenu .showHideButton').remove();
                 $('#topbar #leftButtonMenu').append(topbarLeftButtonMenu);
                 fixCollapsedButtons();
             }
@@ -155,12 +160,17 @@ function hideSidebar(special) {
         $('#leftButtonMenu').animate({
             margin: '0 0 0 0.4%'
         }, 200);
+        $('#mainArea').animate({
+            margin: '0 0 0 0'
+        });
         $('#topbar').animate({
             margin: 0,
             width: '100%'
         }, 400);
     });
+    $('.helpbutton').fadeOut(400);
     if (special == "empty") {
+        $('#leftButtonMenu .showHideButton').remove();
         $('#leftButtonMenu').prepend(`<p class="showHideButton" onclick="showSidebar('empty')">Show</p>`);
         $('#leftButtonMenu .showHideButton').animate({
             height: '20px'
@@ -176,9 +186,14 @@ function showSidebar(special) {
             $('#leftButtonMenu .showHideButton').remove();
         });
     }
+    $('.helpbutton').fadeIn(400);
+    topbarWidth = $(window).width() - 193;
+    $('#mainArea').animate({
+        margin: '0 0 0 193px'
+    });
     $('#topbar').animate({
         margin: `0 0 0 ${topbarMargin}`,
-        width: topbarWidth
+        width: `${topbarWidth}px`
     }, 400, function () {
         $('#sidebar, #sidebarshadowfix').animate({
             height: sidebarHeight
