@@ -1,4 +1,4 @@
-# Fabrica [logo]
+# Fabrica ![Logo][logo]
 ## General
 #### Hide/Show sidebar
 + To hide the sidebar press the "hide"-Button under the Logo
