@@ -136,7 +136,7 @@ function slideDown(to, from) {
                 $('#topbar #leftButtonMenu').append(topbarLeftButtonMenu);
                 fixCollapsedButtons();
             }
-            $('#topbar #leftButtonMenu').prepend(`<div class="button buttoncontainer back" onclick="slide(this, '${from}', '${to}');">Back</div>`);
+            $('#topbar #leftButtonMenu').prepend(`<div class="button buttoncontainer back" onclick="slide(this, '${from}', '${to}'); urlEdit('back');">Back</div>`);
             $('#topbar #leftButtonMenu .buttoncontainer').fadeIn(400);
             $('#topbar #leftButtonMenu .buttoncontainer').css('display', 'flex', 'align-items', 'center', 'text-align', 'center');
         });
