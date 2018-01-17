@@ -1,4 +1,4 @@
-# Fabrica ![Logo][logo]
+![Fabrica][logo]
 ## General
 #### Hide/Show sidebar
 + To hide the sidebar press the "hide"-Button under the Logo
@@ -63,4 +63,4 @@
 #### Save Document
 + File ➡ Save ➡ [Choose destination and name] ➡ save
 
-[logo]: https://fabrica-devs.github.io/fabrica/media/turtleowo.png
+[logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
