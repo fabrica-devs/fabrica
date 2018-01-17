@@ -12,12 +12,19 @@ $(document).ready(function () {
 
     $(window).on('resize', function () {
         $('#innerOverlay').css('height', $(window).height() - 72);
-        $('#sidebar').css('height', '100%');
         topbarWidth = $(window).width() - 193;
-        $('#topbar').animate({
-            margin: `0 0 0 ${topbarMargin}`,
-            width: `${topbarWidth}px`
-        });
+        if ($('#sidebar').height() != 0) {
+            $('#sidebar').css('height', '100vh');
+            $('#mainArea').animate({
+                margin: `0 0 0 ${topbarMargin}`,
+                width: `${$(window).width()}`
+            });
+            $('#topbar').animate({
+                margin: `0 0 0 ${topbarMargin}`,
+                width: `${topbarWidth}px`
+            });
+        } else {
+        }
     });
 
     topbarLeftButtonMenu = $('#topbar #leftButtonMenu').html();
@@ -121,7 +128,7 @@ function slideDown(to, from) {
         $('#innerOverlay').css('position', 'absolute');
     } else {
         $('#innerOverlay').css('height', $(window).height() - 72);
-        $('#innerOverlay').css('position', 'relative');
+        $('#innerOverlay').css('position', 'absolute');
     }
 
     writeOverlay(to);
@@ -136,7 +143,7 @@ function slideDown(to, from) {
                 $('#topbar #leftButtonMenu').append(topbarLeftButtonMenu);
                 fixCollapsedButtons();
             }
-            $('#topbar #leftButtonMenu').prepend(`<div class="button buttoncontainer back" onclick="slide(this, '${from}', '${to}');">Back</div>`);
+            $('#topbar #leftButtonMenu').prepend(`<div class="button buttoncontainer back" onclick="slide(this, '${from}', '${to}'); urlEdit('back');">Back</div>`);
             $('#topbar #leftButtonMenu .buttoncontainer').fadeIn(400);
             $('#topbar #leftButtonMenu .buttoncontainer').css('display', 'flex', 'align-items', 'center', 'text-align', 'center');
         });
@@ -161,8 +168,9 @@ function hideSidebar(special) {
             margin: '0 0 0 0.4%'
         }, 200);
         $('#mainArea').animate({
-            margin: '0 0 0 0'
-        });
+            margin: '0 0 0 0',
+            width: '100vw'
+        }, 400);
         $('#topbar').animate({
             margin: 0,
             width: '100%'
@@ -189,7 +197,8 @@ function showSidebar(special) {
     $('.helpbutton').fadeIn(400);
     topbarWidth = $(window).width() - 193;
     $('#mainArea').animate({
-        margin: '0 0 0 193px'
+        margin: '0 0 0 193px',
+        width: topbarWidth
     });
     $('#topbar').animate({
         margin: `0 0 0 ${topbarMargin}`,
