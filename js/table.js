@@ -42,13 +42,25 @@ function urlChange(newPage) {
 /* Andi */
 
 $(document).ready(() => {
-    const container = document.getElementById('table')
+    const $container = $('#table')
 
-    const spreadsheet = new Handsontable(container, {
+    console.log($(window).height() - $('#topbar').height())
+
+    const spreadsheet = new Handsontable($container.get(0), {
+        height: $(window).height() - $('#topbar').height(),
+        width: $container.width(),
+
         rowHeaders: true,
         colHeaders: true,
+
+        rowHeights: 25,
+        colWidths: 80,
+        
         startRows: 26,
         startCols: 26,
+
+        rowHeaderWidth: 30,
+        
         contextMenu: true
     })
 })
