@@ -1,10 +1,8 @@
 /* Clemens */
 
 window.onload = function () {
-    if (typeof (Storage) !== undefined) {
-        if (localStorage.getItem("lastSite").split("?p=").length > 1 && localStorage.getItem("lastSite") !== undefined) {
-            urlEdit(localStorage.getItem("lastSite").split("?p=")[1]);
-        }
+    if ( window.location.href.split("?p=").length > 1) {
+        urlEdit(window.location.href.split("?p=")[1]);
     }
 }
 
@@ -15,14 +13,11 @@ function urlEdit(newPage) {
             urlChange(newPage);
             break;
         case "help":
-            document.getElementById("bottomInfo").children[0].children[1].click();
+            document.getElementById("rightButtonMenu").children[0].children[0].click();
             urlChange(newPage);
             break;
         default:
             window.history.pushState({path:window.location.href.split("?p=")[0]},'',window.location.href.split("?p=")[0]);
-            if (typeof (Storage) !== undefined) {
-                localStorage.setItem("lastSite", window.location.href);
-            }
             break;
     }
 }
@@ -33,9 +28,6 @@ function urlChange(newPage) {
         curUrl = curUrl.split("?p=")[0] + "?p=" + newPage;
     } else {
         curUrl += "?p=" + newPage;
-    }
-    if (typeof (Storage) !== undefined) {
-        localStorage.setItem("lastSite", curUrl);
     }
     window.history.pushState({path:curUrl},'',curUrl);
 }
