@@ -63,4 +63,4 @@
 #### Save Document
 + File ➡ Save ➡ [Choose destination and name] ➡ save
 
-[logo]: https://lh3.google.com/u/0/d/1XPNzO6LNvmu25_tJDY189I4wORivRpM3=w1920-h1017-iv1
+[logo]: https://fabrica-devs.github.io/fabrica/media/turtleowo.png
