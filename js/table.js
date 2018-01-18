@@ -1,7 +1,7 @@
 /* Clemens */
 
 window.onload = function () {
-    if ( window.location.href.split("?p=").length > 1) {
+    if (window.location.href.split("?p=").length > 1) {
         urlEdit(window.location.href.split("?p=")[1]);
     }
 }
@@ -31,7 +31,7 @@ function urlChange(newPage) {
     } else {
         curUrl += "?p=" + newPage;
     }
-    window.history.pushState({path:curUrl},'',curUrl);
+    window.history.pushState({ path: curUrl }, '', curUrl);
 }
 
 function tableWidthResize(widen) {
@@ -85,8 +85,8 @@ $(document).ready(() => {
         rowHeights: 25,
         colWidths: 80,
 
-        startRows: 26,
-        startCols: 26,
+        startRows: 99,
+        startCols: 50,
 
         rowHeaderWidth: 30,
 
