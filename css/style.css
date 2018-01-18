@@ -146,6 +146,7 @@ a {
   height: 110px;
   transform: rotate(8deg);
   transition: transform 200ms;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,7 +160,6 @@ a {
   font-size: 30px;
 }
 #sidebar .service.hoverable:hover {
-  cursor: pointer;
   transform: scale(1.05) rotate(8deg) !important;
 }
 #sidebar .service.primary .servicecontainer h1 {
@@ -199,8 +199,6 @@ a {
   justify-content: center;
   align-items: center;
   user-select: none;
-}
-#topbar .buttoncontainer:not(.fontcontainer) {
   text-transform: capitalize;
 }
 #topbar .buttoncontainer.back {
@@ -215,11 +213,6 @@ a {
   background-color: transparent;
 }
 #topbar #leftButtonMenu {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-#topbar #leftButtonMenu #fontsettingscontainer {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -261,21 +254,18 @@ a {
   display: flex;
   align-items: center;
   flex-direction: row;
-  border: none;
 }
 #topbar #leftButtonMenu .formattingcontainer .formattingbutton {
   width: 54px;
   cursor: pointer;
   background: transparent;
   text-align: center;
-  background-color: #ebebeb !important;
-  border-left: none;
 }
 #topbar #leftButtonMenu .formattingcontainer .formattingbutton:hover {
-  background-color: #dedede !important;
+  background-color: #dedede;
 }
 #topbar #leftButtonMenu .formattingcontainer .formattingbutton.selected {
-  background-color: #d0d0d0 !important;
+  background-color: #d9d9d9;
 }
 #topbar #leftButtonMenu .formattingcontainer .formattingbutton.selected.bold {
   font-weight: 700;
