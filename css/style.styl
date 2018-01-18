@@ -190,6 +190,10 @@ a
         display flex
         align-items center
         flex-direction row
+        #fontsettingscontainer
+            display flex
+            align-items center
+            flex-direction row
         .showHideButton
             transform rotate(-90deg)
             height 0
@@ -221,15 +225,18 @@ a
             display flex
             align-items center
             flex-direction row
+            border none
             .formattingbutton
                 width 54px
                 cursor pointer
                 background transparent
                 text-align center
+                background-color #ebebeb!important
+                border-left none
                 &:hover
-                    background-color #dedede
+                    background-color #dedede!important
                 &.selected
-                    background-color #d9d9d9
+                    background-color #d0d0d0!important
                     &.bold
                         font-weight 700
                     &.italics
