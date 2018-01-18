@@ -32,13 +32,6 @@ $(document).ready(function () {
     topbarMargin = $('#topbar').css('margin-left');
     topbarWidth = $('#topbar').css('width');
     $('#innerOverlay').css('height', $(window).height() - 72);
-    $('.formattingbutton').on('click', function () {
-        if ($(this).hasClass('selected')) {
-            $(this).removeClass('selected');
-        } else {
-            $(this).addClass('selected');
-        }
-    });
 
     fixCollapsedButtons();
 });
@@ -101,13 +94,10 @@ function slideUp(to, from) {
     $('#innerOverlay').slideUp(400, function () {
         $('#topbar #leftButtonMenu').fadeOut(400, function () {
             $('#topbar #leftButtonMenu').html(topbarLeftButtonMenu);
-            $('.formattingbutton').on('click', function () {
-                if ($(this).hasClass('selected')) {
-                    $(this).removeClass('selected');
-                } else {
-                    $(this).addClass('selected');
-                }
-            });
+
+            // reregister controls because elements are recreated
+            formattingControls.registerDefault()
+
             $('#topbar *').fadeIn(400);
             fixCollapsedButtons();
             $(`.dropdown`).removeAttr('style');
@@ -141,6 +131,10 @@ function slideDown(to, from) {
             if (to == 'help') {
                 $('#leftButtonMenu .showHideButton').remove();
                 $('#topbar #leftButtonMenu').append(topbarLeftButtonMenu);
+
+                // reregister controls because elements are recreated
+                formattingControls.registerDefault()
+
                 fixCollapsedButtons();
             }
             $('#topbar #leftButtonMenu').prepend(`<div class="button buttoncontainer back" onclick="slide(this, '${from}', '${to}'); urlEdit('back');">Back</div>`);

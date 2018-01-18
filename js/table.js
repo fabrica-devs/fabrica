@@ -73,8 +73,6 @@ function textDeco(type) {
 $(document).ready(() => {
     const $container = $('#table')
 
-    console.log($(window).height() - $('#topbar').height())
-
     const spreadsheet = new Handsontable($container.get(0), {
         height: $(window).height() - $('#topbar').height(),
         width: '100%',
@@ -84,12 +82,34 @@ $(document).ready(() => {
 
         rowHeights: 25,
         colWidths: 80,
-
         startRows: 99,
         startCols: 50,
-
         rowHeaderWidth: 30,
 
-        contextMenu: true
+        contextMenu: true,
+        outsideClickDeselects: false,
+
+        renderer: textFormattingRenderer
+    })
+
+    formattingControls.onChangeOptions(options => {
+        const range = spreadsheet.getSelectedRange()
+        if (!range) return
+
+        range.forAll((row, col) => {
+            spreadsheet.setCellMetaObject(row, col, options)
+        })
+
+        spreadsheet.render()
     })
 })
+
+function textFormattingRenderer(spreadsheet, td, row, col, prop, value, cellProperties) {
+    Handsontable.renderers.TextRenderer.apply(this, arguments)
+
+    const meta = spreadsheet.getCellMeta(row, col)
+    
+    td.style.fontWeight = meta.bold ? 'bold' : 'normal'
+    td.style.fontStyle = meta.italics ? 'italic' : 'normal'
+    td.style.textDecoration = meta.underline ? 'underline' : 'none'
+}
