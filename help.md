@@ -57,11 +57,38 @@
     
 ## Export/Import
 #### New Document
-+ File ➡ New ➡ [Name] ➡ create
++ To create a new document, hover over the File button in the topbar menu and click on new. You will be asked to enter the name the document should have. Now you have to click the create button and you are done.
+
+    ```
+    File ➡ New ➡ [Name] ➡ create
 #### Open Document
-+ File ➡ Open ➡ [Choose File] ➡ open
++ To open a document, hover over the File button in the topbar menu and click on open. After you've chosen the file you want to open, click on the open button.
+        
+    ```
+     File ➡ Open ➡ [Choose File] ➡ open
 #### Save Document
-+ File ➡ Save ➡ [Choose destination and name] ➡ save
++ To create a new document, hover over the File button in the topbar menu and click on new. You will be asked to enter the name the document should have. Now you have to click the create button and you are done.
+
+    ```
+    File ➡ Save ➡ [Choose destination and name] ➡ save
+## Basic Editing
+#### Write
++ To write something in a field, click the field and start writing
+    ```    
+    Field ➡ [Write text]
+#### Change Font
++ Click the drop down menu for fonts and choose a font
+    ```   
+    Font ➡ [choose font]
+#### Change Fontsize
++ Click the drop down menu for the sizes and choose one
+    ```
+    Size ➡ [choose size]
+#### Write __bold__ text
++ Click on the __B__ in the topbar to toggle it
+#### Write _italic_ text
++ Click the _I_ in the topbar to toggle it
+#### Write <u>underlined</u> text
++ Click the <u>U</u> in the topbar to toggle it
 
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
-[github project]: https://github.com/fabrica-devs/fabrica "Fabrica"
