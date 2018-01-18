@@ -53,9 +53,9 @@
     + I
         + *Italic*
     + U
-        + <u>Underline</u>
+        + <span style="text-decoration:underline">Underline</span>
     
-## Export/Import
+git ## Export/Import
 #### New Document
 + To create a new document, hover over the File button in the topbar menu and click on new. You will be asked to enter the name the document should have. Now you have to click the create button and you are done.
 
@@ -89,7 +89,7 @@
 #### Write _italic_ text
 + Click the _I_ in the topbar to toggle it
 #### Write <u>underlined</u> text
-+ Click the <u>U</u> in the topbar to toggle it
++ Click the <span style="text-decoration:underline">U</span> in the topbar to toggle it
 
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
 [about us]: https://fabrica-devs.github.io/fabrica/?p=about "About us"
