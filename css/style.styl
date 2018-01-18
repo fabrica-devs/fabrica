@@ -176,7 +176,8 @@ a
         justify-content center
         align-items center
         user-select none
-        text-transform capitalize
+        &:not(.fontcontainer)
+            text-transform capitalize
         &.back
             display none
     .button
@@ -193,7 +194,7 @@ a
             transform rotate(-90deg)
             height 0
         .fontcontainer
-            width 400px
+            width 400px                
             span
                 background-color #d9d9d9
                 select, option

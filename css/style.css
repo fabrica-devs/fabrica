@@ -199,6 +199,8 @@ a {
   justify-content: center;
   align-items: center;
   user-select: none;
+}
+#topbar .buttoncontainer:not(.fontcontainer) {
   text-transform: capitalize;
 }
 #topbar .buttoncontainer.back {
