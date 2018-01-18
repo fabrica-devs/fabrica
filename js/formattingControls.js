@@ -28,6 +28,16 @@ const formattingControls = (() => {
             formattingOptions[name] = $selector.hasClass('selected')
         },
 
+        registerFontSelector($selector) {
+            /*
+            TODO:
+            - Load list of fonts
+            - Detect if fonts are available (3rdparty/detector.js)
+            - Add available fonts to dropdown
+            - On select, change options to new font and fire optionChangeCallbacks
+             */
+        },
+
         registerDefault() {
             this.reset()
             this.registerToggleButton($('.formattingbutton.bold'), 'bold')
