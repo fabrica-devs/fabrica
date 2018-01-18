@@ -5,11 +5,11 @@
 + To show the sidebar press the "show"-Button next to the Logo
 #### Sidebar navigation
 + About us
-    + See who developed this fancy pancy webpage
+    + See [who][about us] developed this fancy pancy webpage
 + Git Project
-    + Redirects to our [github project]
+    + Redirects to our [github project][git project]
 #### Topbar navigation
-+ Table Calculation <span onclick="console.log(this)">+</span>
++ Table Calculation
     + File
         + drops down options for 'File'
     + Edit
@@ -92,3 +92,5 @@ git ## Export/Import
 + Click the <span style="text-decoration:underline">U</span> in the topbar to toggle it
 
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
+[about us]: https://fabrica-devs.github.io/fabrica/?p=about "About us"
+[git project]: https://github.com/fabrica-devs/fabrica "Fabrica"
