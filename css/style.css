@@ -132,14 +132,13 @@ a {
 #sidebar #topInfo {
   align-self: flex-start;
   width: 100%;
-  margin-bottom: -12px;
 }
 #sidebar #bottomInfo {
   align-self: flex-end;
   width: 100%;
 }
 #sidebar .services:not(:first-child) {
-  margin: 9% auto;
+  margin: 9% auto 0 auto;
 }
 #sidebar .service {
   width: 112%;
@@ -235,22 +234,49 @@ a {
 #topbar #leftButtonMenu .fontcontainer span {
   background-color: #d9d9d9;
 }
+#topbar #leftButtonMenu .fontcontainer span input[type="number"]::-webkit-outer-spin-button,
+#topbar #leftButtonMenu .fontcontainer span input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#topbar #leftButtonMenu .fontcontainer span input[type="number"] {
+  -moz-appearance: textfield;
+  border: 3px solid #d9d9d9;
+  transition: border-color 400ms;
+}
+#topbar #leftButtonMenu .fontcontainer span input[type="number"]:invalid {
+  border-color: #f00 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+#topbar #leftButtonMenu .fontcontainer span input[type="number"]:hover,
+#topbar #leftButtonMenu .fontcontainer span input[type="number"]:focus {
+  border-color: #c8c8c8;
+}
+#topbar #leftButtonMenu .fontcontainer span input,
 #topbar #leftButtonMenu .fontcontainer span select,
 #topbar #leftButtonMenu .fontcontainer span option {
-  max-width: 154px;
+  max-width: 40px;
   text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: none;
   outline: none;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 20px;
+  padding: 0 2px;
+  background-color: #ebebeb !important;
+  height: 30px;
+}
+#topbar #leftButtonMenu .fontcontainer span select,
+#topbar #leftButtonMenu .fontcontainer span option {
+  max-width: 154px;
+  border: none;
   font-family: 'Montserrat', sans-serif !important;
   font-size: 20px;
   padding: 0 10px 0 0;
   background: url("../media/dropdown.svg") no-repeat;
   background-position: 95%;
-  height: 30px;
-  background-color: #ebebeb;
 }
 #topbar #leftButtonMenu .fontcontainer span #fontfamilyselector {
   margin-right: 20px;

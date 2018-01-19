@@ -19,11 +19,11 @@ $(document).ready(function () {
             $('#mainArea').animate({
                 margin: `0 0 0 ${topbarMargin}`,
                 width: `${$(window).width()}`
-            });
+            }, 100);
             $('#topbar').animate({
                 margin: `0 0 0 ${topbarMargin}`,
                 width: `${topbarWidth}px`
-            });
+            }, 100);
         }
     });
 
@@ -212,7 +212,7 @@ function showSidebar(special) {
     $('#mainArea').animate({
         margin: '0 0 0 193px',
         width: topbarWidth
-    });
+    }, 400);
     $('#topbar').animate({
         margin: `0 0 0 ${topbarMargin}`,
         width: `${topbarWidth}px`

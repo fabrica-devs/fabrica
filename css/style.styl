@@ -118,12 +118,11 @@ a
     #topInfo
         align-self flex-start    
         width 100%
-        margin-bottom -12px
     #bottomInfo
         align-self flex-end
         width 100%
     .services:not(:first-child)
-        margin 9% auto
+        margin 9% auto 0 auto
     .service
         width 112%
         margin-left -12px
@@ -202,21 +201,39 @@ a
             width 400px                
             span
                 background-color #d9d9d9
-                select, option
-                    max-width 154px
-                    text-align: center
+                input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
+                    -webkit-appearance none
+                    margin 0
+                input[type="number"]
+                    -moz-appearance textfield
+                    border 3px solid #d9d9d9
+                    transition border-color 400ms
+                    &:invalid
+                        border-color red!important
+                        outline none!important
+                        box-shadow none!important
+                    &:hover, &:focus
+                        border-color #c8c8c8
+                input, select, option
+                    max-width 40px
+                    text-align center
                     -webkit-appearance none
                     -moz-appearance none
                     appearance none
-                    border none
                     outline none
+                    font-family 'Montserrat', sans-serif!important
+                    font-size 20px
+                    padding 0 2px
+                    background-color #ebebeb!important
+                    height 30px
+                select, option
+                    max-width 154px
+                    border none
                     font-family 'Montserrat', sans-serif!important
                     font-size 20px
                     padding 0 10px 0 0
                     background url('../media/dropdown.svg') no-repeat
                     background-position 95%
-                    height 30px
-                    background-color #ebebeb
                 #fontfamilyselector
                     margin-right 20px
             .fontsizecontainer
