@@ -49,6 +49,10 @@ function fixTopbar() {
     });
 
     fixCollapsedButtons();
+
+    $('#fontfamilyselector').on('change', function () {
+        $('#fontfamilyselector').css('font-family', `${this.value}, sans-serif`);
+    });
 }
 
 /* Overlay that gets executed when leaving the page! */
