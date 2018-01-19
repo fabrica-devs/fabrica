@@ -118,7 +118,7 @@ a
     #topInfo
         align-self flex-start    
         width 100%
-        margin-bottom -16px
+        margin-bottom -12px
     #bottomInfo
         align-self flex-end
         width 100%
@@ -130,7 +130,6 @@ a
         height 110px
         transform rotate(8deg)
         transition transform 200ms
-        cursor pointer
         display flex
         justify-content center
         align-items center
@@ -141,6 +140,7 @@ a
             h1
                 font-size 30px    
         &.hoverable:hover
+            cursor pointer
             transform scale(1.05) rotate(8deg)!important
         &.primary
             .servicecontainer
@@ -177,7 +177,8 @@ a
         justify-content center
         align-items center
         user-select none
-        text-transform capitalize
+        &:not(.fontcontainer)
+            text-transform capitalize
         &.back
             display none
     .button
@@ -190,11 +191,15 @@ a
         display flex
         align-items center
         flex-direction row
+        #fontsettingscontainer
+            display flex
+            align-items center
+            flex-direction row
         .showHideButton
             transform rotate(-90deg)
             height 0
         .fontcontainer
-            width 400px
+            width 400px                
             span
                 background-color #d9d9d9
                 select, option
@@ -221,15 +226,18 @@ a
             display flex
             align-items center
             flex-direction row
+            border none
             .formattingbutton
                 width 54px
                 cursor pointer
                 background transparent
                 text-align center
+                background-color #ebebeb!important
+                border-left none
                 &:hover
-                    background-color #dedede
+                    background-color #dedede!important
                 &.selected
-                    background-color #d9d9d9
+                    background-color #d0d0d0!important
                     &.bold
                         font-weight 700
                     &.italics

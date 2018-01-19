@@ -26,13 +26,12 @@
             <h1 class="fabricaLogoText">Fabrica</h1>
             <p>is loading, please stand by!</p>
             <div class="spinner"></div>
-            <img src="media/turtleowo.svg" alt="Fabrica Logo" class="fabricaLogoImg">
+            <img src="media/turtleowo.svg" class="fabricaLogoImg">
         </div>
         <div id="mainWindow">
             <div id="bars">
                 <div id="topbar">
                     <div id="leftButtonMenu">
-                        <!-- <div class="spacer"></div> -->
                         <div class="button buttoncontainer collapsed file">File</div>
                         <div class="dropdown file">
                             <ul>
@@ -101,33 +100,27 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="fontcontainer buttoncontainer">
-                            <span>Font:
-                                <select name="fontfamilyselector" id="fontfamilyselector">
-                                    <option selected value="Font">Montserrat</option>
-                                    <option value="Font">wijoiwejroiwjeroijweoirjwoierjoiwejroiwjerowjeroij</option>
-                                    <option value="Font">Font</option>
-                                    <option value="Font">Font</option>
-                                    <option value="Font">Font</option>
-                                    <option value="Font">Font</option>
-                                </select>
-                            </span>
-                            <span>Size:
-                                <select name="fontsizeselector" id="fontsizeselector">
-                                    <option value="10">10</option>
-                                    <option value="12">12</option>
-                                    <option value="14">14</option>
-                                    <option value="16">16</option>
-                                    <option value="18">18</option>
-                                    <option value="20">20</option>
-                                </select>
-                                px
-                            </span>
-                        </div>
-                        <div class="formattingcontainer">
-                            <div class="buttoncontainer formattingbutton bold" title="Bold">B</div>
-                            <div class="buttoncontainer formattingbutton italics" title="Italics">I</div>
-                            <div class="buttoncontainer formattingbutton underscore" title="Underscore">U</div>
+                        <div id="fontsettingscontainer">
+                            <div class="fontcontainer buttoncontainer">
+                                <span>Font:
+                                    <select name="fontfamilyselector" id="fontfamilyselector">
+                                        <option selected value="Font">Montserrat</option>
+                                        <option value="Font">wijoiwejroiwjeroijweoirjwoierjoiwejroiwjerowjeroij</option>
+                                        <option value="Font">Font</option>
+                                        <option value="Font">Font</option>
+                                        <option value="Font">Font</option>
+                                        <option value="Font">Font</option>
+                                    </select>
+                                </span>
+                                <span>Size:
+                                    <input type="number" min="3" max="72" value="12" id="fontsizeselector" /> px
+                                </span>
+                            </div>
+                            <div class="formattingcontainer buttoncontainer">
+                                <div class="buttoncontainer formattingbutton bold" title="Bold">B</div>
+                                <div class="buttoncontainer formattingbutton italics" title="Italics">I</div>
+                                <div class="buttoncontainer formattingbutton underscore" title="Underscore">U</div>
+                            </div>
                         </div>
                     </div>
                     <div id="rightButtonMenu">
@@ -169,7 +162,7 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="media/turtleowo.png" alt="Fabrica Logo" class="fabricaLogoImg">
+                        <img src="media/turtleowo.png" alt="Fabrica Logo" class="fabricaLogoImg" onclick="changeLogo();">
                     </div>
                 </div>
             </div>

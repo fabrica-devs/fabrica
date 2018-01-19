@@ -1,5 +1,5 @@
 var topbarLeftButtonMenu;
-var texts = [['about', `<div id="about"><h1 class="headerText">Welcome! We are Fabrica</h1><div class="logocontainer"><div class="logos"><div><img src="media/turtleowoextend.png" alt="IMG"><h2>Andreas</h2><code>Project Management/Implementation of the Table Calculation</code></div><div><img src="media/Clemens.png" alt="IMG"><h2>Clemens</h2><code>Implementation of the Table Calculation</code><p>yeah can i get uuuuuuuuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p></div><div><img src="media/Thomas.png" alt="IMG"><h2>Thomas</h2><code>Creation of the Documentation/Helpsites</code></div><div><img src="media/Gabi.png" alt="IMG"><h2>Gabriel (Gabi) Deutner</h2><code>Design and Execution of the Layout</code><p>"Heya! Welcome to our website!<br/>As written above, I am responsible for the design and execution of the layout, if you find a mistake in the layout, send me an <a href="mailto:info@deutner.space">email!</a><br/><b>Loves turtles!</b></p></div></a></div></div></div>`]];
+var texts = [['about', `<div id="about"><h1 class="headerText">Welcome! We are Fabrica</h1><div class="logocontainer"><div class="logos"><div><img src="media/turtleowoextend.png" alt="IMG"><h2>Andreas</h2><code>Project Management/Implementation of the Table Calculation</code></div><div><img src="media/Clemens.png" alt="IMG"><h2>Clemens</h2><code>Implementation of the Table Calculation</code><p>yeah can i get uuuuuuuuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p></div><div><img src="media/Thomas.png" alt="IMG"><h2>Thomas</h2><code>Creation of the Documentation/Helpsites</code></div><div><img src="media/Gabi.png" alt="IMG"><h2>Gabriel (Gabi) Deutner</h2><code>Design and Execution of the Layout</code><p>"Heya! Welcome to our website!<br/>As written above, I am responsible for the design and execution of the layout, if you find a mistake in the layout, send me an <a href="mailto:info@deutner.space">email!</a><br/><b>Loves turtles!</b></p></div></a></div></div></div>`], ['help', `<div id="help>Test</div>`]];
 
 /* On Page Load */
 $(document).ready(function () {
@@ -10,6 +10,7 @@ $(document).ready(function () {
         });
     }, 500);
 
+    /* Realignes objects on Resize */
     $(window).on('resize', function () {
         $('#innerOverlay').css('height', $(window).height() - 72);
         topbarWidth = $(window).width() - 193;
@@ -23,19 +24,34 @@ $(document).ready(function () {
                 margin: `0 0 0 ${topbarMargin}`,
                 width: `${topbarWidth}px`
             });
-        } else {
         }
     });
 
+    /* Saves buttons, margins and other CSS attributes */
     topbarLeftButtonMenu = $('#topbar #leftButtonMenu').html();
     sidebarHeight = $('#sidebar').css('height');
     topbarMargin = $('#topbar').css('margin-left');
     topbarWidth = $('#topbar').css('width');
-    $('#innerOverlay').css('height', $(window).height() - 72);
 
-    fixCollapsedButtons();
+    fixTopbar();
 });
 
+function fixTopbar() {
+
+    /* Set the Height of the innerOverlay according to the height of the window */
+    $('#innerOverlay').css('height', $(window).height() - 72);
+
+    $('#fontsizeselector').on('blur', function () {
+        console.log($(this).val());
+        if ($(this).val() < 3 || $(this).val() > 72) {
+            $(this).val(12);
+        }
+    });
+
+    fixCollapsedButtons();
+}
+
+/* Overlay that gets executed when leaving the page! */
 function leavingPage(url) {
     $('#overlay').html(`<h1 class="fabricaLogoText">Fabrica</h1>
                         <p>You are now leaving the editor</p>
@@ -46,11 +62,14 @@ function leavingPage(url) {
     }, 200);
 }
 
+/* Write into the inner Overlay */
 function writeOverlay(to) {
     if (to != 'Empty') {
         for (let i = 0; i < texts.length; i++) {
+            console.log(`Identifier: ${texts[i][0]}, Text: ${texts[i][1]}, Searching for: ${to}`);
             if (texts[i][0] == to) {
                 $('#innerOverlayContainer').html(texts[i][1]);
+                return;
             }
         }
     } else {
@@ -97,7 +116,6 @@ function slideUp(to, from) {
 
             // reregister controls because elements are recreated
             formattingControls.registerDefault()
-
             $('#topbar *').fadeIn(400);
             fixCollapsedButtons();
             $(`.dropdown`).removeAttr('style');
@@ -116,9 +134,11 @@ function slideDown(to, from) {
         hideSidebar();
         $('#innerOverlay').css('height', $(window).height() - 400);
         $('#innerOverlay').css('position', 'absolute');
+        $('#innerOverlay').css('background-color', 'rgba(255,255,255,0.8)');
     } else {
         $('#innerOverlay').css('height', $(window).height() - 72);
         $('#innerOverlay').css('position', 'absolute');
+        $('#innerOverlay').css('background-color', 'white');
     }
 
     writeOverlay(to);
@@ -130,11 +150,10 @@ function slideDown(to, from) {
             $('#topbar #leftButtonMenu .buttoncontainer').remove();
             if (to == 'help') {
                 $('#leftButtonMenu .showHideButton').remove();
+                $('#topbar #leftButtonMenu *').remove();
                 $('#topbar #leftButtonMenu').append(topbarLeftButtonMenu);
-
                 // reregister controls because elements are recreated
                 formattingControls.registerDefault()
-
                 fixCollapsedButtons();
             }
             $('#topbar #leftButtonMenu').prepend(`<div class="button buttoncontainer back" onclick="slide(this, '${from}', '${to}'); urlEdit('back');">Back</div>`);
