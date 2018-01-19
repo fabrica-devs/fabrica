@@ -256,7 +256,7 @@ a {
 #topbar #leftButtonMenu .fontcontainer span input,
 #topbar #leftButtonMenu .fontcontainer span select,
 #topbar #leftButtonMenu .fontcontainer span option {
-  max-width: 40px;
+  width: 40px;
   text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -270,7 +270,7 @@ a {
 }
 #topbar #leftButtonMenu .fontcontainer span select,
 #topbar #leftButtonMenu .fontcontainer span option {
-  max-width: 154px;
+  width: 154px;
   border: none;
   font-family: 'Montserrat', sans-serif !important;
   font-size: 20px;
@@ -345,6 +345,9 @@ a {
   }
   #fontsizeselector {
     padding: 0 20px 0 10px !important;
+  }
+  #topbar #leftButtonMenu .fontcontainer span input {
+    padding: 0 !important;
   }
 }
 /* COLOR SCHEME */
