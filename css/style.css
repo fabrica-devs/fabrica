@@ -132,6 +132,7 @@ a {
 #sidebar #topInfo {
   align-self: flex-start;
   width: 100%;
+  margin-bottom: -16px;
 }
 #sidebar #bottomInfo {
   align-self: flex-end;
