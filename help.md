@@ -82,18 +82,27 @@
 + Click the drop down menu for fonts and choose a font
     ```   
     Font ➡ [choose font]
+    ```
+    ![changeFonts][changeFonts]
 #### Change Fontsize
 + Click the drop down menu for the sizes and choose one
     ```
     Size ➡ [choose size]
 #### Write __bold__ text
 + Click on the __B__ in the topbar to toggle it
+    ![writeBold][writeBold]
 #### Write _italic_ text
 + Click the _I_ in the topbar to toggle it
+    ![writeItalic][writeItalic]
 #### Write <u>underlined</u> text
 + Click the <span style="text-decoration:underline">U</span> in the topbar to toggle it
+    ![writeUnderlined][writeUnderlined]
 
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
 [about us]: https://fabrica-devs.github.io/fabrica/?p=about "About us"
 [git project]: https://github.com/fabrica-devs/fabrica "Fabrica"
 [writeText]: https://raw.githubusercontent.com/fabrica-devs/fabrica/41650ba294b4cb54c3b81ba6f97da5bcc7ac5625/media/gifsHelpsite/WriteText.gif
+[changeFonts]:
+[writeBold]:
+[writeItalic]:
+[writeUnderlined]
