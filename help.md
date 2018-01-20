@@ -76,6 +76,8 @@ git ## Export/Import
 + To write something in a field, click the field and start writing
     ```    
     Field ➡ [Write text]
+    ```
+    ![writeText][writeText]
 #### Change Font
 + Click the drop down menu for fonts and choose a font
     ```   
@@ -94,3 +96,4 @@ git ## Export/Import
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
 [about us]: https://fabrica-devs.github.io/fabrica/?p=about "About us"
 [git project]: https://github.com/fabrica-devs/fabrica "Fabrica"
+[writeText]: /media/gifsHelpsite/WriteText.gif
