@@ -55,7 +55,7 @@
     + U
         + <span style="text-decoration:underline">Underline</span>
     
-git ## Export/Import
+## Export/Import
 #### New Document
 + To create a new document, hover over the File button in the topbar menu and click on new. You will be asked to enter the name the document should have. Now you have to click the create button and you are done.
 
@@ -76,6 +76,8 @@ git ## Export/Import
 + To write something in a field, click the field and start writing
     ```    
     Field ➡ [Write text]
+    ```
+    ![writeText][writeText]
 #### Change Font
 + Click the drop down menu for fonts and choose a font
     ```   
@@ -94,3 +96,4 @@ git ## Export/Import
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
 [about us]: https://fabrica-devs.github.io/fabrica/?p=about "About us"
 [git project]: https://github.com/fabrica-devs/fabrica "Fabrica"
+[writeText]: https://raw.githubusercontent.com/fabrica-devs/fabrica/41650ba294b4cb54c3b81ba6f97da5bcc7ac5625/media/gifsHelpsite/WriteText.gif
