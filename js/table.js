@@ -46,21 +46,21 @@ function textDeco(type) {
     switch(type) {
         case "b":
             if ( document.getElementById("leftButtonMenu").children[9].children[0].getClassList.length == 4 ) {
-                //append </b> to cellVariable 
+                //append </b> to cellVariable
             } else {
                 //append <b> to cellVariable
             }
             break;
         case "i":
             if ( document.getElementById("leftButtonMenu").children[9].children[1].getClassList.length == 4 ) {
-                //append </i> to cellVariable 
+                //append </i> to cellVariable
             } else {
                 //append <i> to cellVariable
             }
             break;
         case "u":
             if ( document.getElementById("leftButtonMenu").children[9].children[2].getClassList.length == 4 ) {
-                //append </u> to cellVariable 
+                //append </u> to cellVariable
             } else {
                 //append <u> to cellVariable
             }
@@ -108,7 +108,9 @@ function textFormattingRenderer(spreadsheet, td, row, col, prop, value, cellProp
     Handsontable.renderers.TextRenderer.apply(this, arguments)
 
     const meta = spreadsheet.getCellMeta(row, col)
-    
+
+    // TODO: Set default font in formattingControls
+    td.style.fontFamily = meta.fontFamily == undefined ? 'Montserrat' : meta.fontFamily
     td.style.fontWeight = meta.bold ? 'bold' : 'normal'
     td.style.fontStyle = meta.italics ? 'italic' : 'normal'
     td.style.textDecoration = meta.underline ? 'underline' : 'none'

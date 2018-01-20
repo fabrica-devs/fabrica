@@ -29,17 +29,38 @@ const formattingControls = (() => {
         },
 
         registerFontSelector($selector) {
-            /*
-            TODO:
-            - Load list of fonts
-            - Detect if fonts are available (3rdparty/detector.js)
-            - Add available fonts to dropdown
-            - On select, change options to new font and fire optionChangeCallbacks
-             */
+            const baseFonts = [
+                'Montserrat',
+                'Pacifico',
+                'sans-serif',
+                'serif',
+                'monospace',
+                'cursive'
+            ]
+            baseFonts.forEach(font => $selector.append(`<option>${font}</option>`))
+
+            const testedFonts = [
+                'Arial',
+                'Arial Black',
+                'Verdana'
+            ]
+
+            const detector = new Detector()
+            const installedFonts = testedFonts.filter(font => detector.detect(font))
+            installedFonts.forEach(font => $selector.append(`<option>${font}</option>`))
+
+            $selector.change(e => {
+                const selectedFont = e.target.value
+                formattingOptions.fontFamily = selectedFont
+                optionChangeCallbacks.fire(formattingOptions)
+            })
+
+            formattingOptions.fontFamily = baseFonts[0]
         },
 
         registerDefault() {
             this.reset()
+            this.registerFontSelector($('#fontfamilyselector'))
             this.registerToggleButton($('.formattingbutton.bold'), 'bold')
             this.registerToggleButton($('.formattingbutton.italics'), 'italics')
             this.registerToggleButton($('.formattingbutton.underscore'), 'underline')
