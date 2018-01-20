@@ -7,34 +7,25 @@ var texts = [
             <h1 class="headerText">Welcome! We are Fabrica</h1>
             <div class="logocontainer">
                 <div class="logos">
-                    <div>
+                    <a target="_blank" href="https://andreashae.github.io/">
                         <img src="media/andi.png" alt="IMG">
                         <h2>Andreas (Andi) Hässler</h2>
                         <code>Project Management,<br>Development</code>
-                    </div>
-                    <div>
+                    </a>
+                    <a target="_blank" href="https://github.com/UrMaBo">
                         <img src="media/Clemens.png" alt="IMG">
                         <h2>Clemens</h2>
                         <code>Development</code>
-                        <p>yeah can i get uuuuuuuuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p>
-                    </div>
-                    <div>
+                    </a>
+                    <a target="_blank" href="https://github.com/WhatdidusayWhat">
                         <img src="media/Thomas.png" alt="IMG">
                         <h2>Thomas</h2>
                         <code>Technical Writing,<br>Documentation</code>
-                    </div>
-                    <div>
+                    </a>
+                    <a target="_blank" href="https://github.com/GabrielDeutner">
                         <img src="media/Gabi.png" alt="IMG">
                         <h2>Gabriel (Gabi) Deutner</h2>
                         <code>Design and development of user interface</code>
-                        <p>"Heya! Welcome to our website!
-                            <br/> As written above, I am responsible for the design and execution of the layout, if you find a mistake
-                            in the layout, send me an
-                            <a href="mailto:info@deutner.space">email!</a>
-                            <br/>
-                            <b>Loves turtles!</b>
-                        </p>
-                    </div>
                     </a>
                 </div>
             </div>

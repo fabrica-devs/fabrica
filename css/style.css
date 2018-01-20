@@ -413,21 +413,22 @@ a {
   margin: 10% auto;
   word-break: break-all;
 }
-#about .logos div {
+#about .logos a {
+  color: inherit;
+  display: block;
   margin-left: 40%;
-  padding: 0 10%;
+  padding: 10%;
   border-radius: 10px;
   transition: background-color 200ms;
 }
-#about .logos div:hover {
+#about .logos a:hover {
   background-color: rgba(22,22,22,0.2);
 }
-#about .logos div:hover img {
+#about .logos a:hover img {
   transform: scale(1.05);
 }
-#about .logos div img {
-  margin-top: 10%;
-  margin-bottom: 2%;
+#about .logos a img {
+  margin: 10% 0;
   height: 200px;
   border-radius: 75%;
   border: 4px #212121 solid;
