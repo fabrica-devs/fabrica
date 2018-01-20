@@ -96,4 +96,4 @@
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
 [about us]: https://fabrica-devs.github.io/fabrica/?p=about "About us"
 [git project]: https://github.com/fabrica-devs/fabrica "Fabrica"
-[writeText]: https://fabrica-devs.github.io/fabrica/media/gifsHelpsite/WriteText.gif
+[writeText]: https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/WriteText.gif
