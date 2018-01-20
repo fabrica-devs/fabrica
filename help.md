@@ -1,8 +1,6 @@
 ![Fabrica][logo]
 ## General
-#### Hide/Show sidebar
-+ To hide the sidebar press the "hide"-Button under the Logo
-+ To show the sidebar press the "show"-Button next to the Logo
+
 #### Sidebar navigation
 + About us
     + See [who][about us] developed this fancy pancy webpage
@@ -54,7 +52,10 @@
         + *Italic*
     + U
         + <span style="text-decoration:underline">Underline</span>
-    
+#### Hide/Show sidebar
++ To hide the sidebar press the "hide"-Button under the Logo
++ To show the sidebar press the "show"-Button next to the Logo
+![hide-show-sidebar][hide-show-sidebar]
 ## Export/Import
 #### New Document
 + To create a new document, hover over the File button in the topbar menu and click on new. You will be asked to enter the name the document should have. Now you have to click the create button and you are done.
@@ -106,3 +107,4 @@
 [writeBold]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/writeBold.gif
 [writeItalic]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/writeItalic.gif
 [writeUnderlined]: https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/writeUnderlined.gif
+[hide-show-sidebar]: https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/hide-show-sidebar.gif
