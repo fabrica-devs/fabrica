@@ -10,23 +10,23 @@ var texts = [
                     <div>
                         <img src="media/andi.png" alt="IMG">
                         <h2>Andreas (Andi) Hässler</h2>
-                        <code>Project Management/Implementation of the Table Calculation</code>
+                        <code>Project Management,<br>Development</code>
                     </div>
                     <div>
                         <img src="media/Clemens.png" alt="IMG">
                         <h2>Clemens</h2>
-                        <code>Implementation of the Table Calculation</code>
+                        <code>Development</code>
                         <p>yeah can i get uuuuuuuuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p>
                     </div>
                     <div>
                         <img src="media/Thomas.png" alt="IMG">
                         <h2>Thomas</h2>
-                        <code>Creation of the Documentation/Helpsites</code>
+                        <code>Technical Writing,<br>Documentation</code>
                     </div>
                     <div>
                         <img src="media/Gabi.png" alt="IMG">
                         <h2>Gabriel (Gabi) Deutner</h2>
-                        <code>Design and Execution of the Layout</code>
+                        <code>Design and development of user interface</code>
                         <p>"Heya! Welcome to our website!
                             <br/> As written above, I am responsible for the design and execution of the layout, if you find a mistake
                             in the layout, send me an
