@@ -8,8 +8,8 @@ var texts = [
             <div class="logocontainer">
                 <div class="logos">
                     <div>
-                        <img src="media/turtleowoextend.png" alt="IMG">
-                        <h2>Andreas</h2>
+                        <img src="media/andi.png" alt="IMG">
+                        <h2>Andreas (Andi) Hässler</h2>
                         <code>Project Management/Implementation of the Table Calculation</code>
                     </div>
                     <div>
