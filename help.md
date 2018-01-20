@@ -102,7 +102,7 @@
 [about us]: https://fabrica-devs.github.io/fabrica/?p=about "About us"
 [git project]: https://github.com/fabrica-devs/fabrica "Fabrica"
 [writeText]: https://raw.githubusercontent.com/fabrica-devs/fabrica/41650ba294b4cb54c3b81ba6f97da5bcc7ac5625/media/gifsHelpsite/WriteText.gif
-[changeFonts]:
-[writeBold]:
-[writeItalic]:
-[writeUnderlined]
+[changeFonts]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/changeFonts.gif
+[writeBold]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/writeBold.gif
+[writeItalic]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/writeItalic.gif
+[writeUnderlined]: https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/writeUnderlined.gif
