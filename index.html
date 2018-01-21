@@ -1,172 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Fabrica</title>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Pacifico" rel="stylesheet">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="js/supportedBrowser.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fabrica</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/help.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/supportedBrowser.js"></script>
 
-        <!-- table -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.35.0/handsontable.full.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.35.0/handsontable.full.min.css">
-        <script src="3rdparty/detector.js"></script>
-        <script src="js/formattingControls.js"></script>
-        <script src="js/table.js"></script>
-    </head>
+    <!-- table -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.35.0/handsontable.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.35.0/handsontable.full.min.css">
+    <script src="3rdparty/showdown.js"></script>
+    <script src="3rdparty/detector.js"></script>
+    <script src="js/formattingControls.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/help.js"></script>
 
-    <body>
-        <div id="overlay">
-            <h1 class="fabricaLogoText">Fabrica</h1>
-            <p>is loading, please stand by!</p>
-            <div class="spinner"></div>
-            <img src="media/turtles/turtleowo.svg" class="fabricaLogoImg">
-        </div>
-        <div id="mainWindow">
-            <div id="bars">
-                <div id="topbar">
-                    <div id="leftButtonMenu">
-                        <div class="button buttoncontainer collapsed file">File</div>
-                        <div class="dropdown file">
-                            <ul>
-                                <li>
-                                    <span>New</span>
-                                </li>
-                                <li>
-                                    <span>Open</span>
-                                </li>
-                                <li>
-                                    <span>Save</span>
-                                </li>
-                                <li>
-                                    <span>Export</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="button buttoncontainer collapsed edit">Edit</div>
-                        <div class="dropdown edit">
-                            <ul>
-                                <li>
-                                    <span>Option 1</span>
-                                </li>
-                                <li>
-                                    <span>Option 2</span>
-                                </li>
-                                <li>
-                                    <span>Option 3</span>
-                                </li>
-                                <li>
-                                    <span>Option 4</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="button buttoncontainer collapsed insert">Insert</div>
-                        <div class="dropdown insert">
-                            <ul>
-                                <li>
-                                    <span>Option 1</span>
-                                </li>
-                                <li>
-                                    <span>Option 2</span>
-                                </li>
-                                <li>
-                                    <span>Option 3</span>
-                                </li>
-                                <li>
-                                    <span>Option 4</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="button buttoncontainer collapsed more">More</div>
-                        <div class="dropdown more">
-                            <ul>
-                                <li>
-                                    <span>Option 1</span>
-                                </li>
-                                <li>
-                                    <span>Option 2</span>
-                                </li>
-                                <li>
-                                    <span>Option 3</span>
-                                </li>
-                                <li>
-                                    <span>Option 4</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="fontsettingscontainer">
-                            <div class="fontcontainer buttoncontainer">
-                                <span>Font:
+</head>
+
+<body>
+    <div id="overlay">
+        <h1 class="fabricaLogoText">Fabrica</h1>
+        <p>is loading, please stand by!</p>
+        <div class="spinner"></div>
+        <img src="media/turtles/turtleowo.svg" class="fabricaLogoImg">
+    </div>
+    <div id="mainWindow">
+        <div id="bars">
+            <div id="topbar">
+                <div id="leftButtonMenu">
+                    <div class="button buttoncontainer collapsed file">File</div>
+                    <div class="dropdown file">
+                        <ul>
+                            <li>
+                                <span>New</span>
+                            </li>
+                            <li>
+                                <span>Open</span>
+                            </li>
+                            <li>
+                                <span>Save</span>
+                            </li>
+                            <li>
+                                <span>Export</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="button buttoncontainer collapsed edit">Edit</div>
+                    <div class="dropdown edit">
+                        <ul>
+                            <li>
+                                <span>Option 1</span>
+                            </li>
+                            <li>
+                                <span>Option 2</span>
+                            </li>
+                            <li>
+                                <span>Option 3</span>
+                            </li>
+                            <li>
+                                <span>Option 4</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="button buttoncontainer collapsed insert">Insert</div>
+                    <div class="dropdown insert">
+                        <ul>
+                            <li>
+                                <span>Option 1</span>
+                            </li>
+                            <li>
+                                <span>Option 2</span>
+                            </li>
+                            <li>
+                                <span>Option 3</span>
+                            </li>
+                            <li>
+                                <span>Option 4</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="button buttoncontainer collapsed more">More</div>
+                    <div class="dropdown more">
+                        <ul>
+                            <li>
+                                <span>Option 1</span>
+                            </li>
+                            <li>
+                                <span>Option 2</span>
+                            </li>
+                            <li>
+                                <span>Option 3</span>
+                            </li>
+                            <li>
+                                <span>Option 4</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="fontsettingscontainer">
+                        <div class="fontcontainer buttoncontainer">
+                            <span>Font:
                                     <select name="fontfamilyselector" id="fontfamilyselector"></select>
                                 </span>
-                                <span>Size:
+                            <span>Size:
                                     <input type="number" min="3" max="72" value="12" id="fontsizeselector" /> px
                                 </span>
-                            </div>
-                            <div class="formattingcontainer buttoncontainer">
-                                <div class="buttoncontainer formattingbutton bold" title="Bold">B</div>
-                                <div class="buttoncontainer formattingbutton italics" title="Italics">I</div>
-                                <div class="buttoncontainer formattingbutton underscore" title="Underscore">U</div>
-                            </div>
                         </div>
-                    </div>
-                    <div id="rightButtonMenu">
-                        <div class="helpbuttoncontainer">
-                            <div class="buttoncontainer button helpbutton" title="Help" onclick="slide(this, 'help', 'tablecalc'); urlChange('help');">?</div>
-                        </div>
-                        <div class="buttoncontainer button positionindicator tablecalc" style="cursor: default;">
-                            <div class="twolinebutton transparent">
-                                <h1>table</h1>
-                                <p>calculation</p>
-                            </div>
+                        <div class="formattingcontainer buttoncontainer">
+                            <div class="buttoncontainer formattingbutton bold" title="Bold">B</div>
+                            <div class="buttoncontainer formattingbutton italics" title="Italics">I</div>
+                            <div class="buttoncontainer formattingbutton underscore" title="Underscore">U</div>
                         </div>
                     </div>
                 </div>
-                <div id="sidebarshadowfix"></div>
-                <div id="sidebar">
-                    <div id="topInfo">
-                        <h1 class="fabricaLogoText">Fabrica</h1>
-                        <p class="showHideButton" onclick="hideSidebar('empty')">Hide</p>
-                        <div class="services">
-                            <div class="service primary tablecalc" style="transform: rotate(8deg);">
-                                <div class="servicecontainer">
-                                    <h1>Table</h1>
-                                    <p>Calculation</p>
-                                </div>
-                            </div>
-                        </div>
+                <div id="rightButtonMenu">
+                    <div class="helpbuttoncontainer">
+                        <div class="buttoncontainer button helpbutton" title="Help" onclick="slide(this, 'help', 'tablecalc'); urlChange('help');getHelpText()">?</div>
                     </div>
-                    <div id="bottomInfo">
-                        <div class="services">
-                            <div class="service about hoverable" style="transform: rotate(8deg);" onclick="slide(this, 'about', 'tablecalc'); urlChange('about');">
-                                <div class="servicecontainer">
-                                    <h1>About us</h1>
-                                </div>
-                            </div>
-                            <div class="service git hoverable" style="transform: rotate(8deg);" onclick="leavingPage('https://github.com/fabrica-devs/fabrica');">
-                                <div class="servicecontainer">
-                                    <h1>Git Project</h1>
-                                </div>
-                            </div>
+                    <div class="buttoncontainer button positionindicator tablecalc" style="cursor: default;">
+                        <div class="twolinebutton transparent">
+                            <h1>table</h1>
+                            <p>calculation</p>
                         </div>
-                        <img src="media/turtles/turtleowo.png" alt="Fabrica Logo" class="fabricaLogoImg toggable" onclick="changeLogo();">
                     </div>
                 </div>
             </div>
-            <div id="mainArea">
-                <div id="table"></div>
-                <div id="innerOverlay">
-                    <div id="innerOverlayContainer"></div>
+            <div id="sidebarshadowfix"></div>
+            <div id="sidebar">
+                <div id="topInfo">
+                    <h1 class="fabricaLogoText">Fabrica</h1>
+                    <p class="showHideButton" onclick="hideSidebar('empty')">Hide</p>
+                    <div class="services">
+                        <div class="service primary tablecalc" style="transform: rotate(8deg);">
+                            <div class="servicecontainer">
+                                <h1>Table</h1>
+                                <p>Calculation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="bottomInfo">
+                    <div class="services">
+                        <div class="service about hoverable" style="transform: rotate(8deg);" onclick="slide(this, 'about', 'tablecalc'); urlChange('about');">
+                            <div class="servicecontainer">
+                                <h1>About us</h1>
+                            </div>
+                        </div>
+                        <div class="service git hoverable" style="transform: rotate(8deg);" onclick="leavingPage('https://github.com/fabrica-devs/fabrica');">
+                            <div class="servicecontainer">
+                                <h1>Git Project</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="media/turtles/turtleowo.png" alt="Fabrica Logo" class="fabricaLogoImg toggable" onclick="changeLogo();">
                 </div>
             </div>
         </div>
-    </body>
-    <script src="js/styling.js"></script>
+        <div id="mainArea">
+            <div id="table"></div>
+            <div id="innerOverlay">
+                <div id="innerOverlayContainer"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/styling.js"></script>
 
 </html>
