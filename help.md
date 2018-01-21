@@ -21,9 +21,9 @@
     + Size
         + drops down sizes
     + B
-        + __Bold__
+        + <b>Bold</b>
     + I
-        + *Italic*
+        + <i>Italic</i>
     + U
         + <u>Underline</u>
     + ?
@@ -47,11 +47,11 @@
     + Size
         + drops down sizes
     + B
-        + __Bold__
+        + <b>Bold</b>
     + I
-        + *Italic*
+        + <i>Italic</i>
     + U
-        + <span style="text-decoration:underline">Underline</span>
+        + <u>Underline</u>
 #### Hide/Show sidebar
 + To hide the sidebar press the "hide"-Button under the Logo
 + To show the sidebar press the "show"-Button next to the Logo
@@ -93,11 +93,11 @@
     ```
     Size ➡ [choose size]
     ```
-#### Write __bold__ text
-+ Click on the __B__ in the topbar to toggle it
+#### Write <B>B</B> text
++ Click on the <b>B</b> in the topbar to toggle it
     ![writeBold][writeBold]
-#### Write _italic_ text
-+ Click the _I_ in the topbar to toggle it
+#### Write <i>I</i> text
++ Click the <i>I</i> in the topbar to toggle it
     ![writeItalic][writeItalic]
 #### Write <u>underlined</u> text
 + Click the <span style="text-decoration:underline">U</span> in the topbar to toggle it

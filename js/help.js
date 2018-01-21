@@ -8,7 +8,8 @@ function getHelpText() {
                 headerLevelStart: 'true',
                 tables: 'true',
                 smoothLivePreview: 'true',
-                simpleLineBreaks: 'true'
+                simpleLineBreaks: 'true',
+                underline: 'true'
             }),
             html = converter.makeHtml(text)
         $("#innerOverlayContainer").html("<div id='helpContainer'>" + html + "</div>")
