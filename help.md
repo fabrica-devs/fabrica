@@ -136,8 +136,8 @@
 + Select a range of fields
     + Click the first cell in the range, and then drag to the last cell, or hold down SHIFT while you press the arrow keys to extend the selection. To select multiple fields in a row/column press the square in the bottom right and drag it to the last cell
         ```
-        first cell ➡ drag to last
-        first cell ➡ shift + arrow keys
+        first cell ➡ drag to last <br>
+        first cell ➡ shift + arrow keys <br>
         first cell ➡ square ➡ drag to last
          ```
 + Select whole row/s
