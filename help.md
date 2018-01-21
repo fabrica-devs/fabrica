@@ -148,12 +148,16 @@
     + Click on a number next to the table. To select multiple rows click the first one and then drag to the last row
         ```
         first row
+        ```
+        ```
         first row ➡ drag to last
         ```
 + Select whole column/s
     + Click on a letter at the top of the table. To select multiple columns click the first one and then drag to the last column
     ```
     first column
+    ```
+    ```
     first column ➡ drag to last
     ```
 #### Clear fields
