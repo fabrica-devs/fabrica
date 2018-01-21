@@ -47,6 +47,8 @@ $(document).ready(function () {
         });
     }, 500);
 
+    changeLogo();
+
     /* Realignes objects on Resize */
     $(window).on('resize', function () {
         $('#innerOverlay').css('height', $(window).height() - 72);
@@ -269,4 +271,10 @@ function showSidebar(special) {
 
 function showFunctionBar() {
     $('#topbar #leftButtonMenu').append(topbarLeftButtonMenu).fadeIn(400);
+}
+
+function changeLogo() {
+    const turtles = ['king', 'owo', 'think', 'thumbsup', 'worker'];
+    let rand = Math.floor((Math.random() * 5));
+    $('.fabricaLogoImg.toggable').attr('src', `media/turtles/turtle${turtles[rand]}.png`);
 }

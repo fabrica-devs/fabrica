@@ -47,7 +47,6 @@
   animation: pulse 2s linear 2.3s infinite;
 }
 #overlay .fabricaLogoImg {
-  cursor: pointer;
   margin: 40% auto;
   width: 800px;
   transform: rotate(25deg);
@@ -96,6 +95,7 @@ a {
   width: 60%;
   margin: 20% auto 20% auto;
   display: block;
+  cursor: pointer;
 }
 .showHideButton {
   cursor: pointer;
