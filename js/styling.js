@@ -18,8 +18,8 @@ var texts = [
                         <code>Development</code>
                     </a>
                     <a target="_blank" href="https://github.com/WhatdidusayWhat">
-                        <img src="media/Thomas.png" alt="IMG">
-                        <h2>Thomas</h2>
+                        <img src="media/What.png" alt="IMG">
+                        <h2>What?!</h2>
                         <code>Technical Writing,<br>Documentation</code>
                     </a>
                     <a target="_blank" href="https://github.com/GabrielDeutner">
@@ -39,10 +39,10 @@ var texts = [
 ];
 
 /* On Page Load */
-$(document).ready(function () {
+$(document).ready(function() {
     /* Hardcoded Loading Animation */
-    setTimeout(function () {
-        $('#overlay').fadeOut(400, function () {
+    setTimeout(function() {
+        $('#overlay').fadeOut(400, function() {
             $('#overlay').html("");
         });
     }, 500);
@@ -50,7 +50,7 @@ $(document).ready(function () {
     changeLogo();
 
     /* Realignes objects on Resize */
-    $(window).on('resize', function () {
+    $(window).on('resize', function() {
         $('#innerOverlay').css('height', $(window).height() - 72);
         topbarWidth = $(window).width() - 193;
         if ($('#sidebar').height() != 0) {
@@ -80,7 +80,7 @@ function fixTopbar() {
     /* Set the Height of the innerOverlay according to the height of the window */
     $('#innerOverlay').css('height', $(window).height() - 72);
 
-    $('#fontsizeselector').on('blur', function () {
+    $('#fontsizeselector').on('blur', function() {
         console.log($(this).val());
         if ($(this).val() < 3 || $(this).val() > 72) {
             $(this).val(12);
@@ -89,7 +89,7 @@ function fixTopbar() {
 
     fixCollapsedButtons();
 
-    $('#fontfamilyselector').on('change', function () {
+    $('#fontfamilyselector').on('change', function() {
         $('#fontfamilyselector').css('font-family', `${this.value}, sans-serif`);
     });
 }
@@ -98,9 +98,9 @@ function fixTopbar() {
 function leavingPage(url) {
     $('#overlay').html(`<h1 class="fabricaLogoText">Fabrica</h1>
                         <p>You are now leaving the editor</p>
-                        <p>And are getting redirected to: <a href="`+ url + `">` + url + `</p>`);
+                        <p>And are getting redirected to: <a href="` + url + `">` + url + `</p>`);
     $('#overlay').fadeIn(400);
-    setTimeout(function () {
+    setTimeout(function() {
         window.location.href = url;
     }, 200);
 }
@@ -122,7 +122,7 @@ function writeOverlay(to) {
 
 function changeIndicatorButton(to, from) {
     lastButtonText = $('.positionindicator div').html();
-    $('.positionindicator div').fadeOut(200, function () {
+    $('.positionindicator div').fadeOut(200, function() {
         $('.positionindicator').addClass(to).removeClass(from);
         if (to == 'tablecalc') {
             $(this).html(`<h1>table</h1><p>calculation</p>`).fadeIn(200);
@@ -133,11 +133,11 @@ function changeIndicatorButton(to, from) {
 }
 
 function fixCollapsedButtons() {
-    $('.collapsed').on('mouseenter', function () {
+    $('.collapsed').on('mouseenter', function() {
         let buttonClass = $(this).attr('class').replace('buttoncontainer ', '').replace('button ', '').replace('collapsed ', '');
         $(`.dropdown.${buttonClass}`).css('left', $(this).offset().left);
     });
-    $('.collapsed').on('click', function () {
+    $('.collapsed').on('click', function() {
         let buttonClass = $(this).attr('class').replace('buttoncontainer ', '').replace('button ', '').replace('collapsed ', '');
         if ($(`.dropdown.${buttonClass}`).hasClass('toggled')) {
             $(`.dropdown.${buttonClass}`).removeClass('toggled');
@@ -153,8 +153,8 @@ function slideUp(to, from) {
 
     changeIndicatorButton(to, from);
 
-    $('#innerOverlay').slideUp(400, function () {
-        $('#topbar #leftButtonMenu').fadeOut(400, function () {
+    $('#innerOverlay').slideUp(400, function() {
+        $('#topbar #leftButtonMenu').fadeOut(400, function() {
             $('#topbar #leftButtonMenu').html(topbarLeftButtonMenu);
 
             // reregister controls because elements are recreated
@@ -188,8 +188,8 @@ function slideDown(to, from) {
 
     changeIndicatorButton(to, from);
 
-    $('#innerOverlay').slideDown(400, function () {
-        $('#topbar #leftButtonMenu .buttoncontainer, .helpbuttoncontainer').fadeOut(400, function () {
+    $('#innerOverlay').slideDown(400, function() {
+        $('#topbar #leftButtonMenu .buttoncontainer, .helpbuttoncontainer').fadeOut(400, function() {
             $('#topbar #leftButtonMenu .buttoncontainer').remove();
             if (to == 'help') {
                 $('#leftButtonMenu .showHideButton').remove();
@@ -219,7 +219,7 @@ function slide(button, to, from) {
 function hideSidebar(special) {
     $('#sidebar, #sidebarshadowfix').animate({
         height: 0
-    }, 400, function () {
+    }, 400, function() {
         $('#leftButtonMenu').animate({
             margin: '0 0 0 0.4%'
         }, 200);
@@ -246,7 +246,7 @@ function showSidebar(special) {
     if (special == "empty") {
         $('#leftButtonMenu .showHideButton').animate({
             width: 0
-        }, 400, function () {
+        }, 400, function() {
             $('#leftButtonMenu .showHideButton').remove();
         });
     }
@@ -259,7 +259,7 @@ function showSidebar(special) {
     $('#topbar').animate({
         margin: `0 0 0 ${topbarMargin}`,
         width: `${topbarWidth}px`
-    }, 400, function () {
+    }, 400, function() {
         $('#sidebar, #sidebarshadowfix').animate({
             height: sidebarHeight
         }, 400);
