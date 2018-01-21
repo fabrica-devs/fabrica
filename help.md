@@ -10,12 +10,6 @@
 + Table Calculation
     + File
         + drops down options for 'File'
-    + Edit
-        + drops down options for 'Edit'
-    + Insert
-        + drops down options for 'Insert'
-    + More
-        + drops down options for 'More'
     + Font
         + drops down fonts
     + Size
@@ -36,12 +30,6 @@
         + return to the table calculation
     + File
         + drops down options for 'File'
-    + Edit
-        + drops down options for 'Edit'
-    + Insert
-        + drops down options for 'Insert'
-    + More
-        + drops down options for 'More'
     + Font
         + drops down fonts
     + Size
@@ -144,6 +132,32 @@
 #### Write <span style="text-decoration:underline">underlined</span> text
 + Click the <span style="text-decoration:underline">U</span> in the topbar to toggle it
     ![writeUnderlined][writeUnderlined]
+#### Select fields
++ Select a range of fields
+    + Click the first cell in the range, and then drag to the last cell, or hold down SHIFT while you press the arrow keys to extend the selection. To select multiple fields in a row/column press the square in the bottom right and drag it to the last cell
+        ```
+        first cell ➡ drag to last
+        first cell ➡ shift + arrow keys
+        first cell ➡ square ➡ drag to last
+         ```
++ Select whole row/s
+    + Click on a number next to the table. To select multiple rows click the first one and then drag to the last row
+        ```
+        first row
+        first row ➡ drag to last
+        ```
++ Select whole column/s
+    + Click on a letter at the top of the table. To select multiple columns click the first one and then drag to the last column
+    ```
+    first column
+    first column ➡ drag to last
+    ```
+#### Clear fields
++ Select the fields you want cleared and then press del/entf
+    ```
+    select fields ➡ del/entf
+    ```
+
 
 
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
