@@ -52,6 +52,48 @@
         + <span style="font-style: italic">Italic</span>
     + U
         + <span style="text-decoration: underline">Underline</span>
+        
+## Context menu navigation
++ Insert row above
+    + inserts a row above the marked field
++ Insert row below
+    + inserts a row below the marked field
++ Insert column left
+    + inserts a column on the left side of the marked field
++ Insert column right
+    + inserts a column on the right side of the marked field
++ Remove row/s
+    + removes row/s where the marked field/s is/are in
++ Remove column/s
+    + removes column/s where the marked/s field/s is/are in
++ Undo
+    + undoes a change
++ Redo
+    + redoes an undone change
++ Read only
+    + locks/unlocks the marked field, so that you can't/can edit it anymore/again
++ Alignment
+    + opens submenu
+        + Left
+            + Aligns the text to the left
+        + Center
+            + Aligns the text in the ceter
+        + Right
+            + Aligns the text to the right
+        + Justify
+            + Justifies the text
+        + Top
+            + Aligns the text to the top
+        + Middle
+            + Aligns the text in the middle
+        + Bottom
+            + Aligns the text to the bottom
++ Copy
+    + copies marked field/s to the clipboard
++ Cut
+    + copies marked field/s to the clipboard and clears them
+
+
 #### Hide/Show sidebar
 + To hide the sidebar press the "hide"-Button under the Logo
 + To show the sidebar press the "show"-Button next to the Logo
@@ -102,6 +144,7 @@
 #### Write <span style="text-decoration:underline">underlined</span> text
 + Click the <span style="text-decoration:underline">U</span> in the topbar to toggle it
     ![writeUnderlined][writeUnderlined]
+
 
 [logo]: https://fabrica-devs.github.io/fabrica/media/FabricaLogo.png
 [about us]: https://fabrica-devs.github.io/fabrica/?p=about "About us"
