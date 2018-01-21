@@ -88,10 +88,10 @@
 ![hide-show-sidebar][hide-show-sidebar]
 ## Export/Import
 #### New Document
-+ To create a new document, hover over the File button in the topbar menu and click on new. You will be asked to enter the name the document should have. Now you have to click the create button and you are done.
++ To create a new document, hover over the File button in the topbar menu and click on new. You will be asked to enter the name the document should have. Now you have to click the new button and you are done.
 
     ```
-    File ➡ New ➡ [Name] ➡ create
+    File ➡ New ➡ [Name] ➡ new
     ```
 #### Open Document
 + To open a document, hover over the File button in the topbar menu and click on open. After you've chosen the file you want to open, click on the open button.
@@ -132,28 +132,32 @@
 #### Write <span style="text-decoration:underline">underlined</span> text
 + Click the <span style="text-decoration:underline">U</span> in the topbar to toggle it
     ![writeUnderlined][writeUnderlined]
-#### Select fields
-+ Select a range of fields
-    + Click the first cell in the range, and then drag to the last cell, or hold down SHIFT while you press the arrow keys to extend the selection. To select multiple fields in a row/column press the square in the bottom right and drag it to the last cell
-        ```
-        first cell ➡ drag to last
-        ```
-        ```
-        first cell ➡ shift + arrow keys
-        ```
-        ```
-        first cell ➡ square ➡ drag to last
-         ```
-+ Select whole row/s
-    + Click on a number next to the table. To select multiple rows click the first one and then drag to the last row
-        ```
-        first row
-        ```
-        ```
-        first row ➡ drag to last
-        ```
-+ Select whole column/s
-    + Click on a letter at the top of the table. To select multiple columns click the first one and then drag to the last column
+#### Select a range of fields
++ Click the first cell in the range, and then drag to the last cell, or hold down SHIFT while you press the arrow keys to extend the selection. To select multiple fields in a row/column press the square in the bottom right and drag it to the last cell
+    ```
+    first cell ➡ drag to last
+    ```
+    ```
+    first cell ➡ shift + arrow keys
+    ```
+    ```
+    first cell ➡ square ➡ drag to last
+     ```
+#### Select whole row/s
++ Click on a number next to the table. To select multiple rows click the first one and then drag to the last row
+    ```
+    first row
+    ```
+    ```
+    first row ➡ drag to last
+    ```
+#### Select whole table
++ Press ctrl and a
+    ```
+    ctrl + a
+    ```
+#### Select whole column/s
++ Click on a letter at the top of the table. To select multiple columns click the first one and then drag to the last column
     ```
     first column
     ```
@@ -161,10 +165,85 @@
     first column ➡ drag to last
     ```
 #### Clear fields
-+ Select the fields you want cleared and then press del/entf
++ Select the fields you want cleared and then press del
     ```
-    select fields ➡ del/entf
+    select fields ➡ del
     ```
+#### Undo changes
++ Click the right mouse button on the table and then click undo, or press ctrl and z
+    ```
+    right-click ➡ undo
+    ```
+    ```
+    ctrl + z
+    ```
+    
+#### Redo changes
++ Click the right mouse button on the table and then click redo, or press ctrl, alt and z
+    ```
+    right-click ➡ undo
+    ```
+    ```
+    ctrl + alt + z
+    ```
+#### Copy
++ Select the field/s you want to copy and then press the right mouse button and click on "Copy" or press ctrl and c
+    ```
+    select fields ➡ right-click ➡ copy
+    ```
+    ```
+    select fields ➡ ctrl + c
+    ```
+#### Cut
++ Select the field/s you want to cut and then press the right mouse button and click on "Cut" or press ctrl and x
+    ```
+    select fields ➡ right-click ➡ cut
+    ```
+    ```
+    select fields ➡ ctrl + x
+    ```
+#### Paste
++ Select a field and press ctrl + v
+    ```
+    select field ➡ ctrl + v
+    ```
+## Advanced Editing
+#### Un-/Lock field/s
++ Select the field/s, press the right mouse button and the click "Read only"
+    ```
+    select fields ➡ right-click ➡ read only
+    ```
+#### Insert row
++ Press the right mouse button on the field above/below the position of the new row and then select, depending if you want it above or below, "insert row above" or "insert row below"
+    ```
+    right-click ➡ insert row above
+    ```
+    ```
+    right-click ➡ insert row below
+    ```
+#### Insert column
++ Press the right mouse button on the field next to the position of the new column and then select, depending on which side you want it, "insert column left" or "insert column right"
+    ```
+    right-click ➡ insert column left
+    ```
+    ```
+    right-click ➡ insert column right
+    ```
+#### Remove row/column
++ Press the right mouse button on a field in the row/column and then select, depending if you want to remove a column or row, "remove column" or "remove row"
+    ```
+    right-click ➡ remove row
+    ```
+    ```
+    right-click ➡ remove column
+    ```
+#### Align text
++ Select the field/s you want the text to be aligned, press the right mouse button, hover over Alignment and then select an option
+    ```
+    select field/s ➡ right click ➡ Alignment ➡ Left|Center|Right|Justify and|or Top|Middle|Bottom
+    ```
+
+
 
 
 
