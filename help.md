@@ -21,11 +21,11 @@
     + Size
         + drops down sizes
     + B
-        + <b>Bold</b>
+        + <span style="font-weight: bold">Bold</span>
     + I
-        + <i>Italic</i>
+        + <span style="font-style: italic">Italic</span>
     + U
-        + <u>Underline</u>
+        + <span style="text-decoration: underline">Underline</span>
     + ?
         + Help
 + About us
@@ -47,11 +47,11 @@
     + Size
         + drops down sizes
     + B
-        + <b>Bold</b>
+        + <span style="font-weight: bold">Bold</span>
     + I
-        + <i>Italic</i>
+        + <span style="font-style: italic">Italic</span>
     + U
-        + <u>Underline</u>
+        + <span style="text-decoration: underline">Underline</span>
 #### Hide/Show sidebar
 + To hide the sidebar press the "hide"-Button under the Logo
 + To show the sidebar press the "show"-Button next to the Logo
@@ -93,13 +93,13 @@
     ```
     Size ➡ [choose size]
     ```
-#### Write <B>B</B> text
-+ Click on the <b>B</b> in the topbar to toggle it
+#### Write <span style="font-weight: bold">bold</span> text
++ Click on the <span style="font-weight: bold">B</span> in the topbar to toggle it
     ![writeBold][writeBold]
-#### Write <i>I</i> text
-+ Click the <i>I</i> in the topbar to toggle it
+#### Write <span style="font-style: italic">italic</span> text
++ Click the <span style="font-style: italic">I</span> in the topbar to toggle it
     ![writeItalic][writeItalic]
-#### Write <u>underlined</u> text
+#### Write <span style="text-decoration:underline">underlined</span> text
 + Click the <span style="text-decoration:underline">U</span> in the topbar to toggle it
     ![writeUnderlined][writeUnderlined]
 
