@@ -1,0 +1,26 @@
+{
+  "name": "fabrica",
+  "version": "0.1.0",
+  "description": "An open browser-based spreadsheet app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabrica-devs/fabrica.git"
+  },
+  "contributors": [
+    {
+      "name": "Andreas Hässler"
+    },
+    {
+      "name": "Gabriel Deutner"
+    }
+  ],
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/fabrica-devs/fabrica/issues"
+  },
+  "homepage": "https://github.com/fabrica-devs/fabrica#readme"
+}
