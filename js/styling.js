@@ -214,6 +214,7 @@ function slide(button, to, from) {
     } else {
         slideUp(to, from);
     }
+    setTimeout(function(){document.getElementById("table").children[0].children[0].style.width = "100%"; }, 400);
 }
 
 function hideSidebar(special) {
@@ -240,6 +241,7 @@ function hideSidebar(special) {
             height: '20px'
         }, 400);
     }
+    setTimeout(function(){document.getElementById("table").children[0].children[0].style.width = "100%"; }, 400);
 }
 
 function showSidebar(special) {
