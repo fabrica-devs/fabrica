@@ -100,7 +100,7 @@
      File ➡ Open ➡ [Choose File] ➡ open
     ```
 #### Save Document
-+ To create a new document, hover over the File button in the topbar menu and click on new. You will be asked to enter the name the document should have. Now you have to click the create button and you are done.
++ To save a document, hover over the File button in the topbar menu and click on save.
 
     ```
     File ➡ Save ➡ [Choose destination and name] ➡ save
@@ -143,6 +143,7 @@
     ```
     first cell ➡ square ➡ drag to last
      ```
+    ![selectRangeOfFields][selectRangeOfFields]
 #### Select whole row/s
 + Click on a number next to the table. To select multiple rows click the first one and then drag to the last row
     ```
@@ -151,11 +152,7 @@
     ```
     first row ➡ drag to last
     ```
-#### Select whole table
-+ Press ctrl and a
-    ```
-    ctrl + a
-    ```
+    ![selectWholeRows][selectWholeRows]
 #### Select whole column/s
 + Click on a letter at the top of the table. To select multiple columns click the first one and then drag to the last column
     ```
@@ -164,11 +161,20 @@
     ```
     first column ➡ drag to last
     ```
+    ![selectWholeColumns][selectWholeColumns]
+#### Select whole table
++ Press ctrl and a
+    ```
+    ctrl + a
+    ```
+    ![selectWholeTable][selectWholeTable]
+
 #### Clear fields
 + Select the fields you want cleared and then press del
     ```
     select fields ➡ del
     ```
+    ![clearFields][clearFields]
 #### Undo changes
 + Click the right mouse button on the table and then click undo, or press ctrl and z
     ```
@@ -177,6 +183,7 @@
     ```
     ctrl + z
     ```
+    ![undoChanges][undoChanges]
     
 #### Redo changes
 + Click the right mouse button on the table and then click redo, or press ctrl, alt and z
@@ -186,6 +193,7 @@
     ```
     ctrl + alt + z
     ```
+    ![redoChanges][redoChanges]
 #### Copy
 + Select the field/s you want to copy and then press the right mouse button and click on "Copy" or press ctrl and c
     ```
@@ -256,3 +264,10 @@
 [writeItalic]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/writeItalic.gif
 [writeUnderlined]: https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/writeUnderlined.gif
 [hide-show-sidebar]: https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/hide-show-sidebar.gif
+[selectRangeOfFields]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/selectRangeOfFields.gif
+[selectWholeRows]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/selectWholeRows.gif
+[selectWholeTable]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/selectWholeTable.gif
+[selectWholeColumns]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/selectWholeColumns.gif
+[redoChanges]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/redoChanges.gif
+[undoChanges]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/undoChanges.gif
+[clearFields]:https://raw.githubusercontent.com/fabrica-devs/fabrica/master/media/gifsHelpsite/clearFields.gif
