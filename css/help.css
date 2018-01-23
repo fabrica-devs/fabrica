@@ -1,65 +1,59 @@
 #helpContainer {
-    max-height: 100%;
-    max-width: 856px;
-    overflow: auto;
-    padding: 0 532px;
+  width: 80%;
+  position: relative;
+  top: 0;
+  margin: auto;
+  user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  -webkit-user-select: text !important;
 }
-
 #helpContainer h1 {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0.67em 0;
+  font-size: 4em;
+  font-weight: bold;
+  margin: 0.67em 0;
 }
-
 #helpContainer h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 0.83em 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.83em 0;
 }
-
 #helpContainer h3 {
-    font-size: 1.17em;
-    font-weight: bold;
-    margin: 1em 0;
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
 }
-
 #helpContainer code {
-    line-height: 3em;
-    padding: 0.5em 2em;
-    margin-left: 10px;
-    background-color: rgba(220, 220, 220, 0.6);
-    width: 856px;
+  line-height: 3em;
+  padding: 0.5em 2em;
+  background-color: rgba(220,220,220,0.6);
 }
-
 #helpContainer h4 {
-    font-weight: bold;
+  font-weight: bold;
 }
-
 #helpContainer p {
-    margin: 1em 0;
+  margin: 1em 0;
 }
-
 #helpContainer ul,
 #helpContainer ol {
-    display: block;
-    list-style-type: disc;
-    padding-left: 40px;
-    margin: 1em 0;
+  display: block;
+  list-style-type: disc;
+  padding-left: 40px;
+  margin: 1em 0;
 }
-
 #helpContainer ol {
-    list-style-type: decimal;
+  list-style-type: decimal;
 }
-
 #helpContainer li {
-    display: list-item;
+  display: list-item;
 }
-
 #helpContainer blockquote {
-    margin: 1em 40px;
+  margin: 1em 40px;
 }
-
 #helpContainer pre {
-    margin: 1em 0;
-    white-space: pre;
+  margin: 1em 0;
+  white-space: pre;
+}
+#helpContainer img {
+  margin: 1em 0;
 }

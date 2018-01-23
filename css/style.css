@@ -391,6 +391,7 @@ a {
   justify-content: center;
   align-items: center;
   height: 100%;
+  overflow-x: scroll;
 }
 /* ABOUT PAGE */
 #about .headerText {
