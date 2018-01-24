@@ -39,19 +39,14 @@ var texts = [
 ];
 
 /* On Page Load */
-$(document).ready(function() {
-    /* Hardcoded Loading Animation */
-    setTimeout(function() {
-        $('#overlay').fadeOut(400, function() {
-            $('#overlay').html("");
-        });
-    }, 500);
-
+$(document).ready(function () {
     changeLogo();
 
     /* Realignes objects on Resize */
-    $(window).on('resize', function() {
-        $('#innerOverlay').css('height', $(window).height() - 72);
+    $(window).on('resize', function () {
+        if (!$('.positionindicator').hasClass('help') || $(window).height() <= 472) {
+            $('#innerOverlay').css('height', $(window).height() - 72);
+        }
         topbarWidth = $(window).width() - 193;
         if ($('#sidebar').height() != 0) {
             $('#sidebar').css('height', '100vh');
@@ -75,12 +70,14 @@ $(document).ready(function() {
     fixTopbar();
 });
 
+/* When the Topbar gets changed, all the handlers are removed, method reapplies them */
 function fixTopbar() {
 
     /* Set the Height of the innerOverlay according to the height of the window */
     $('#innerOverlay').css('height', $(window).height() - 72);
 
-    $('#fontsizeselector').on('blur', function() {
+    /* Add the font-size controll again */
+    $('#fontsizeselector').on('blur', function () {
         console.log($(this).val());
         if ($(this).val() < 3 || $(this).val() > 72) {
             $(this).val(12);
@@ -89,20 +86,10 @@ function fixTopbar() {
 
     fixCollapsedButtons();
 
-    $('#fontfamilyselector').on('change', function() {
+    /* Applies fontfamily selection again */
+    $('#fontfamilyselector').on('change', function () {
         $('#fontfamilyselector').css('font-family', `${this.value}, sans-serif`);
     });
-}
-
-/* Overlay that gets executed when leaving the page! */
-function leavingPage(url) {
-    $('#overlay').html(`<h1 class="fabricaLogoText">Fabrica</h1>
-                        <p>You are now leaving the editor</p>
-                        <p>And are getting redirected to: <a href="` + url + `">` + url + `</p>`);
-    $('#overlay').fadeIn(400);
-    setTimeout(function() {
-        window.location.href = url;
-    }, 200);
 }
 
 /* Write into the inner Overlay */
@@ -120,9 +107,10 @@ function writeOverlay(to) {
     }
 }
 
+/* Changes the indicator in the top right corner */
 function changeIndicatorButton(to, from) {
     lastButtonText = $('.positionindicator div').html();
-    $('.positionindicator div').fadeOut(200, function() {
+    $('.positionindicator div').fadeOut(200, function () {
         $('.positionindicator').addClass(to).removeClass(from);
         if (to == 'tablecalc') {
             $(this).html(`<h1>table</h1><p>calculation</p>`).fadeIn(200);
@@ -132,12 +120,13 @@ function changeIndicatorButton(to, from) {
     });
 }
 
+/* Changes offset of dropdown menu */
 function fixCollapsedButtons() {
-    $('.collapsed').on('mouseenter', function() {
+    $('.collapsed').on('mouseenter', function () {
         let buttonClass = $(this).attr('class').replace('buttoncontainer ', '').replace('button ', '').replace('collapsed ', '');
         $(`.dropdown.${buttonClass}`).css('left', $(this).offset().left);
     });
-    $('.collapsed').on('click', function() {
+    $('.collapsed').on('click', function () {
         let buttonClass = $(this).attr('class').replace('buttoncontainer ', '').replace('button ', '').replace('collapsed ', '');
         if ($(`.dropdown.${buttonClass}`).hasClass('toggled')) {
             $(`.dropdown.${buttonClass}`).removeClass('toggled');
@@ -153,8 +142,8 @@ function slideUp(to, from) {
 
     changeIndicatorButton(to, from);
 
-    $('#innerOverlay').slideUp(400, function() {
-        $('#topbar #leftButtonMenu').fadeOut(400, function() {
+    $('#innerOverlay').slideUp(400, function () {
+        $('#topbar #leftButtonMenu').fadeOut(400, function () {
             $('#topbar #leftButtonMenu').html(topbarLeftButtonMenu);
 
             // reregister controls because elements are recreated
@@ -188,8 +177,8 @@ function slideDown(to, from) {
 
     changeIndicatorButton(to, from);
 
-    $('#innerOverlay').slideDown(400, function() {
-        $('#topbar #leftButtonMenu .buttoncontainer, .helpbuttoncontainer').fadeOut(400, function() {
+    $('#innerOverlay').slideDown(400, function () {
+        $('#topbar #leftButtonMenu .buttoncontainer, .helpbuttoncontainer').fadeOut(400, function () {
             $('#topbar #leftButtonMenu .buttoncontainer').remove();
             if (to == 'help') {
                 $('#leftButtonMenu .showHideButton').remove();
@@ -214,13 +203,13 @@ function slide(button, to, from) {
     } else {
         slideUp(to, from);
     }
-    setTimeout(function(){document.getElementById("table").children[0].children[0].style.width = "100%"; }, 400);
+    setTimeout(function () { document.getElementById("table").children[0].children[0].style.width = "100%"; }, 400);
 }
 
 function hideSidebar(special) {
     $('#sidebar, #sidebarshadowfix').animate({
         height: 0
-    }, 400, function() {
+    }, 400, function () {
         $('#leftButtonMenu').animate({
             margin: '0 0 0 0.4%'
         }, 200);
@@ -241,14 +230,14 @@ function hideSidebar(special) {
             height: '20px'
         }, 400);
     }
-    setTimeout(function(){document.getElementById("table").children[0].children[0].style.width = "100%"; }, 400);
+    setTimeout(function () { document.getElementById("table").children[0].children[0].style.width = "100%"; }, 400);
 }
 
 function showSidebar(special) {
     if (special == "empty") {
         $('#leftButtonMenu .showHideButton').animate({
             width: 0
-        }, 400, function() {
+        }, 400, function () {
             $('#leftButtonMenu .showHideButton').remove();
         });
     }
@@ -261,7 +250,7 @@ function showSidebar(special) {
     $('#topbar').animate({
         margin: `0 0 0 ${topbarMargin}`,
         width: `${topbarWidth}px`
-    }, 400, function() {
+    }, 400, function () {
         $('#sidebar, #sidebarshadowfix').animate({
             height: sidebarHeight
         }, 400);
