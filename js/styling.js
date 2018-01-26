@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 var topbarLeftButtonMenu;
 var texts = [
     [
@@ -36,7 +38,10 @@ var texts = [
         'help',
         `<div id="help>Test</div>`
     ]
-];
+]
+let sidebarHeight = null
+let topbarMargin = null
+let topbarWidth = null
 
 /* On Page Load */
 $(document).ready(function () {

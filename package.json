@@ -4,7 +4,9 @@
   "description": "An open browser-based spreadsheet app",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "watch-stylus": "stylus --watch css/",
+    "watch-js": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,6 +34,12 @@
   },
   "homepage": "https://fabrica-devs.github.io/fabrica",
   "devDependencies": {
-    "stylus": "^0.54.5"
+    "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.3.1",
+    "stylus": "^0.54.5",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
   }
 }

@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 $(document).ready(function () {
     if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) {
         $('#overlay *').fadeOut(400, function () {

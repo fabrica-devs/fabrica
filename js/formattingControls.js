@@ -1,6 +1,9 @@
+import $ from 'jquery'
+
 const formattingControls = (() => {
     const optionChangeCallbacks = $.Callbacks()
     let formattingOptions = {}
+    let $toggleButtons = $()
 
     return {
         reset() {
@@ -77,3 +80,5 @@ const formattingControls = (() => {
 })()
 
 $(document).ready(() => formattingControls.registerDefault())
+
+export default formattingControls

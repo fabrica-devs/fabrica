@@ -1,3 +1,5 @@
+import $ from 'jquery'
+
 /* Clemens */
 
 var git = false;
@@ -49,6 +51,8 @@ function urlChange(newPage) {
 
 
 /* Andi */
+
+import formattingControls from './formattingControls'
 
 $(document).ready(() => {
     const $container = $('#table')
