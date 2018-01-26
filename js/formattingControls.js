@@ -1,82 +1,80 @@
 import $ from 'jquery'
 
-const formattingControls = (() => {
-    const optionChangeCallbacks = $.Callbacks()
-    let formattingOptions = {}
-    let $toggleButtons = $()
+const optionChangeCallbacks = $.Callbacks()
+let formattingOptions = {}
+let $toggleButtons = $()
 
-    return {
-        reset() {
-            $toggleButtons = $()
-            formattingOptions = {}
-        },
+const formattingControls = {
+    reset() {
+        $toggleButtons = $()
+        formattingOptions = {}
+    },
 
-        registerToggleButton($selector, name) {
-            $toggleButtons = $toggleButtons.add($selector)
+    registerToggleButton($selector, name) {
+        $toggleButtons = $toggleButtons.add($selector)
 
-            const isSelected = () => $selector.hasClass('selected')
+        const isSelected = () => $selector.hasClass('selected')
 
-            $selector.click(() => {
-                if (isSelected()) {
-                    $selector.removeClass('selected')
-                } else {
-                    $selector.addClass('selected')
-                }
+        $selector.click(() => {
+            if (isSelected()) {
+                $selector.removeClass('selected')
+            } else {
+                $selector.addClass('selected')
+            }
 
-                formattingOptions[name] = isSelected()
+            formattingOptions[name] = isSelected()
 
-                optionChangeCallbacks.fire(formattingOptions)
-            })
+            optionChangeCallbacks.fire(formattingOptions)
+        })
 
-            formattingOptions[name] = $selector.hasClass('selected')
-        },
+        formattingOptions[name] = $selector.hasClass('selected')
+    },
 
-        registerFontSelector($selector) {
-            const baseFonts = [
-                'Montserrat',
-                'Pacifico',
-                'sans-serif',
-                'serif',
-                'monospace',
-                'cursive'
-            ]
-            baseFonts.forEach(font => $selector.append(`<option>${font}</option>`))
+    registerFontSelector($selector) {
+        const baseFonts = [
+            'Montserrat',
+            'Pacifico',
+            'sans-serif',
+            'serif',
+            'monospace',
+            'cursive'
+        ]
+        baseFonts.forEach(font => $selector.append(`<option>${font}</option>`))
 
-            const testedFonts = [
-                'Arial',
-                'Arial Black',
-                'Verdana'
-            ]
+        const testedFonts = [
+            'Arial',
+            'Arial Black',
+            'Verdana'
+        ]
 
-            const detector = new Detector()
-            const installedFonts = testedFonts.filter(font => detector.detect(font))
-            installedFonts.forEach(font => $selector.append(`<option>${font}</option>`))
+        const detector = new Detector()
+        const installedFonts = testedFonts.filter(font => detector.detect(font))
+        installedFonts.forEach(font => $selector.append(`<option>${font}</option>`))
 
-            $selector.change(e => {
-                const selectedFont = e.target.value
-                formattingOptions.fontFamily = selectedFont
-                optionChangeCallbacks.fire(formattingOptions)
-            })
+        $selector.change(e => {
+            const selectedFont = e.target.value
+            formattingOptions.fontFamily = selectedFont
+            optionChangeCallbacks.fire(formattingOptions)
+        })
 
-            formattingOptions.fontFamily = baseFonts[0]
-        },
+        formattingOptions.fontFamily = baseFonts[0]
+    },
 
-        registerDefault() {
-            this.reset()
-            this.registerFontSelector($('#fontfamilyselector'))
-            this.registerToggleButton($('.formattingbutton.bold'), 'bold')
-            this.registerToggleButton($('.formattingbutton.italics'), 'italics')
-            this.registerToggleButton($('.formattingbutton.underscore'), 'underline')
-        },
+    registerDefault() {
+        this.reset()
+        this.registerFontSelector($('#fontfamilyselector'))
+        this.registerToggleButton($('.formattingbutton.bold'), 'bold')
+        this.registerToggleButton($('.formattingbutton.italics'), 'italics')
+        this.registerToggleButton($('.formattingbutton.underscore'), 'underline')
+    },
 
-        getFormattingOptions() {
-            return formattingOptions
-        },
+    getFormattingOptions() {
+        return formattingOptions
+    },
 
-        onChangeOptions(callback) {
-            optionChangeCallbacks.add(callback)
-        }
+    onChangeOptions(callback) {
+        optionChangeCallbacks.add(callback)
     }
-})()
+}
 
 export default formattingControls
