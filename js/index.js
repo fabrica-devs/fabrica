@@ -1,9 +1,6 @@
 import $ from 'jquery'
 import getHelpText from './help'
 import { hideSidebar, slide, changeLogo } from './styling'
-import './supportedBrowser'
-import './help'
-import './formattingControls'
 import { urlChange, setGit } from './table'
 
 $(document).ready(() => {
