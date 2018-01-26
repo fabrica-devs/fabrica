@@ -16,11 +16,18 @@
     },
     {
       "name": "Gabriel Deutner"
+    },
+    {
+      "name": "Clemens Kern"
+    },
+    {
+      "name": "Thomas Galler"
     }
   ],
-  "license": "AGPL-3.0",
+  "license": "UNLICENSED",
+  "private": true,
   "bugs": {
     "url": "https://github.com/fabrica-devs/fabrica/issues"
   },
-  "homepage": "https://github.com/fabrica-devs/fabrica#readme"
+  "homepage": "https://fabrica-devs.github.io/fabrica"
 }
