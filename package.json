@@ -4,6 +4,7 @@
   "description": "An open browser-based spreadsheet app",
   "main": "index.js",
   "scripts": {
+    "watch-stylus": "stylus --watch css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/fabrica-devs/fabrica/issues"
   },
-  "homepage": "https://fabrica-devs.github.io/fabrica"
+  "homepage": "https://fabrica-devs.github.io/fabrica",
+  "devDependencies": {
+    "stylus": "^0.54.5"
+  }
 }
