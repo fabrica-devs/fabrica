@@ -1,0 +1,37 @@
+{
+  "name": "fabrica",
+  "version": "0.1.0",
+  "description": "An open browser-based spreadsheet app",
+  "main": "index.js",
+  "scripts": {
+    "watch-stylus": "stylus --watch css/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabrica-devs/fabrica.git"
+  },
+  "contributors": [
+    {
+      "name": "Andreas Hässler"
+    },
+    {
+      "name": "Gabriel Deutner"
+    },
+    {
+      "name": "Clemens Kern"
+    },
+    {
+      "name": "Thomas Galler"
+    }
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/fabrica-devs/fabrica/issues"
+  },
+  "homepage": "https://fabrica-devs.github.io/fabrica",
+  "devDependencies": {
+    "stylus": "^0.54.5"
+  }
+}
