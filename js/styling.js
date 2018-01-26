@@ -1,6 +1,6 @@
 import $ from 'jquery'
 import formattingControls from './formattingControls'
-import { urlEdit } from './table'
+import { urlEdit } from './url'
 
 var topbarLeftButtonMenu;
 var texts = [

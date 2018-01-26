@@ -1,9 +1,12 @@
 import $ from 'jquery'
 import getHelpText from './help'
 import { hideSidebar, slide, changeLogo } from './styling'
-import { urlChange, setGit } from './table'
+import { urlChange, setGit } from './url'
+import initTable from './table'
 
 $(document).ready(() => {
+    initTable()
+
     $('.helpbutton').click(() => {
         slide(this, 'help', 'tablecalc')
         urlChange('help')

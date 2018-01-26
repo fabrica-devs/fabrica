@@ -1,60 +1,7 @@
 import $ from 'jquery'
-
-/* Clemens */
-
-var git = false;
-
-window.onload = function () {
-    if (window.location.href.split("?p=").length > 1) {
-        urlEdit(window.location.href.split("?p=")[1]);
-    }
-}
-
-window.onfocus = function () {
-    if ( git ) {
-        location.reload();
-    } else {
-        git = false;
-    }
-}
-
-export function setGit() {
-    git = true;
-}
-
-export function urlEdit(newPage) {
-    switch (newPage) {
-        case "about":
-            document.getElementById("bottomInfo").children[0].children[0].click();
-            urlChange(newPage);
-            break;
-        case "help":
-            document.getElementById("rightButtonMenu").children[0].children[0].click();
-            urlChange(newPage);
-            document.getElementById("table").children[0].children[0].style.width = "100%";
-            break;
-        default:
-            window.history.pushState({path:window.location.href.split("?p=")[0]},'',window.location.href.split("?p=")[0]);
-            break;
-    }
-}
-
-export function urlChange(newPage) {
-    var curUrl = String(window.location.href);
-    if (curUrl.split("?p=").length > 1) {
-        curUrl = curUrl.split("?p=")[0] + "?p=" + newPage;
-    } else {
-        curUrl += "?p=" + newPage;
-    }
-    window.history.pushState({ path: curUrl }, '', curUrl);
-}
-
-
-/* Andi */
-
 import formattingControls from './formattingControls'
 
-$(document).ready(() => {
+function initTable() {
     const $container = $('#table')
 
     const spreadsheet = new Handsontable($container.get(0), {
@@ -86,7 +33,7 @@ $(document).ready(() => {
 
         spreadsheet.render()
     })
-})
+}
 
 function textFormattingRenderer(spreadsheet, td, row, col) {
     Handsontable.renderers.TextRenderer.apply(this, arguments)
@@ -99,3 +46,5 @@ function textFormattingRenderer(spreadsheet, td, row, col) {
     td.style.fontStyle = meta.italics ? 'italic' : 'normal'
     td.style.textDecoration = meta.underline ? 'underline' : 'none'
 }
+
+export default initTable
