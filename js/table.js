@@ -18,11 +18,11 @@ window.onfocus = function () {
     }
 }
 
-function setGit() {
+export function setGit() {
     git = true;
 }
 
-function urlEdit(newPage) {
+export function urlEdit(newPage) {
     switch (newPage) {
         case "about":
             document.getElementById("bottomInfo").children[0].children[0].click();
@@ -39,7 +39,7 @@ function urlEdit(newPage) {
     }
 }
 
-function urlChange(newPage) {
+export function urlChange(newPage) {
     var curUrl = String(window.location.href);
     if (curUrl.split("?p=").length > 1) {
         curUrl = curUrl.split("?p=")[0] + "?p=" + newPage;
@@ -88,7 +88,7 @@ $(document).ready(() => {
     })
 })
 
-function textFormattingRenderer(spreadsheet, td, row, col, prop, value, cellProperties) {
+function textFormattingRenderer(spreadsheet, td, row, col) {
     Handsontable.renderers.TextRenderer.apply(this, arguments)
 
     const meta = spreadsheet.getCellMeta(row, col)

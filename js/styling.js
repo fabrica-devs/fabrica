@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import formattingControls from './formattingControls'
+import { urlEdit } from './table'
 
 var topbarLeftButtonMenu;
 var texts = [
@@ -195,7 +196,13 @@ function slideDown(to, from) {
                 formattingControls.registerDefault()
                 fixCollapsedButtons();
             }
-            $('#topbar #leftButtonMenu').prepend(`<div class="button buttoncontainer back" onclick="slide(this, '${from}', '${to}'); urlEdit('back');">Back</div>`);
+
+            $('#topbar #leftButtonMenu').prepend(`<div class="button buttoncontainer back">Back</div>`);
+            $('.button.buttoncontainer.back').click((e) => {
+                slide(e.target, from, to)
+                urlEdit('back')
+            })
+
             $('#topbar #leftButtonMenu .buttoncontainer').fadeIn(400);
             $('#topbar #leftButtonMenu .buttoncontainer').css('display', 'flex', 'align-items', 'center', 'text-align', 'center');
         });
@@ -203,7 +210,7 @@ function slideDown(to, from) {
 
 }
 
-function slide(button, to, from) {
+export function slide(button, to, from) {
     if (button.innerText != "Back") {
         topbarLeftButtonMenu = $('#topbar #leftButtonMenu').html();
         slideDown(to, from);
@@ -213,7 +220,7 @@ function slide(button, to, from) {
     setTimeout(function () { document.getElementById("table").children[0].children[0].style.width = "100%"; }, 400);
 }
 
-function hideSidebar(special) {
+export function hideSidebar(special) {
     $('#sidebar, #sidebarshadowfix').animate({
         height: 0
     }, 400, function () {
@@ -232,7 +239,12 @@ function hideSidebar(special) {
     $('.helpbutton').fadeOut(400);
     if (special == "empty") {
         $('#leftButtonMenu .showHideButton').remove();
-        $('#leftButtonMenu').prepend(`<p class="showHideButton" onclick="showSidebar('empty')">Show</p>`);
+
+        $('#leftButtonMenu').prepend(`<p class="showHideButton">Show</p>`);
+        $('.showHideButton').click(() => {
+            showSidebar('empty')
+        })
+
         $('#leftButtonMenu .showHideButton').animate({
             height: '20px'
         }, 400);
@@ -271,7 +283,7 @@ function showFunctionBar() {
     $('#topbar #leftButtonMenu').append(topbarLeftButtonMenu).fadeIn(400);
 }
 
-function changeLogo() {
+export function changeLogo() {
     const turtles = ['king', 'owo', 'think', 'thumbsup', 'worker'];
     let rand = Math.floor((Math.random() * 5));
     $('.fabricaLogoImg.toggable').attr('src', `media/turtles/turtle${turtles[rand]}.png`);
