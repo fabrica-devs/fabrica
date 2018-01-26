@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import formattingControls from './formattingControls'
 
 var topbarLeftButtonMenu;
 var texts = [
@@ -42,6 +43,7 @@ var texts = [
 let sidebarHeight = null
 let topbarMargin = null
 let topbarWidth = null
+let lastButtonText = null
 
 /* On Page Load */
 $(document).ready(function () {

@@ -1,0 +1,20 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "env": {
+        "browser": true
+    },
+    "globals": {
+        "Handsontable": true,
+        "Detector": true,
+        "showdown": true
+    },
+    "rules": {
+        "no-tabs": "error",
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "strict": ["error", "global"]
+    }
+}

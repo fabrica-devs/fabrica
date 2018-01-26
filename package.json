@@ -4,6 +4,7 @@
   "description": "An open browser-based spreadsheet app",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint js/",
     "build": "webpack",
     "watch-stylus": "stylus --watch css/",
     "watch-js": "webpack --watch",
@@ -36,6 +37,8 @@
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.3.1",
+    "eslint": "^4.16.0",
+    "eslint-plugin-import": "^2.8.0",
     "stylus": "^0.54.5",
     "webpack": "^3.10.0"
   },
