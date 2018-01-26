@@ -23,6 +23,7 @@ function initTable() {
         renderer: textFormattingRenderer
     })
 
+    formattingControls.registerDefault()
     formattingControls.onChangeOptions(options => {
         const range = spreadsheet.getSelectedRange()
         if (!range) return

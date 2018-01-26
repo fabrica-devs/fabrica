@@ -79,6 +79,4 @@ const formattingControls = (() => {
     }
 })()
 
-$(document).ready(() => formattingControls.registerDefault())
-
 export default formattingControls

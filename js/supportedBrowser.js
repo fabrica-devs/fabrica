@@ -1,6 +1,6 @@
 import $ from 'jquery'
 
-$(document).ready(function () {
+function testBrowserSupport() {
     if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) {
         $('#overlay *').fadeOut(400, function () {
             $('#overlay').html('<div id="nonSupportedBrowser"><h2>Your Browser is currently not supported by</h2><h1 class="fabricaLogoText">Fabrica</h1><br><br><br><p>We recommend: <a href="https://www.mozilla.org/en-US/firefox/">Firefox</a> and <a href="https://www.google.com/chrome/">Chrome</a><p></div>');
@@ -11,4 +11,6 @@ $(document).ready(function () {
             $('#overlay #nonSupportedBrowser').css('transform', 'translateY(-50%) translateX(-50%)');
         });
     }
-});
+}
+
+export default testBrowserSupport

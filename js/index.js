@@ -1,10 +1,13 @@
 import $ from 'jquery'
 import getHelpText from './help'
-import { hideSidebar, slide, changeLogo } from './styling'
+import { hideSidebar, slide, changeLogo, initStyling } from './styling'
 import { urlChange, setGit } from './url'
 import initTable from './table'
+import testBrowserSupport from './supportedBrowser'
 
 $(document).ready(() => {
+    testBrowserSupport()
+    initStyling()
     initTable()
 
     $('.helpbutton').click(() => {

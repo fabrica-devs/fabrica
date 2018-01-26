@@ -47,7 +47,7 @@ let topbarWidth = null
 let lastButtonText = null
 
 /* On Page Load */
-$(document).ready(function () {
+export function initStyling() {
     changeLogo();
 
     /* Realignes objects on Resize */
@@ -76,7 +76,7 @@ $(document).ready(function () {
     topbarWidth = $('#topbar').css('width');
 
     fixTopbar();
-});
+}
 
 /* When the Topbar gets changed, all the handlers are removed, method reapplies them */
 function fixTopbar() {
